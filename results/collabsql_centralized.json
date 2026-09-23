@@ -1,0 +1,23 @@
+{
+  "method": "CollabSQL",
+  "setting": "centralized",
+  "llm": "7B",
+  "train_data": "Bird-dev",
+  "results": {
+    "bird_dev": {
+      "correct": 1186,
+      "total": 1534,
+      "execution_accuracy_pct": 77.34
+    },
+    "spider_test": {
+      "correct": 1888,
+      "total": 2147,
+      "execution_accuracy_pct": 87.92
+    },
+    "spider_dk": {
+      "correct": 358,
+      "total": 532,
+      "execution_accuracy_pct": 67.29
+    }
+  }
+}

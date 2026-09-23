@@ -1,0 +1,71 @@
+# -------------------------------
+# build-system
+# -------------------------------
+[build-system]
+requires = [
+    "setuptools>=61.0",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+# -------------------------------
+# project (PEP 621 metadata)
+# -------------------------------
+[project]
+name = "verl"
+dynamic = ["version"]
+
+description = "EFPL training stack for CollabSQL (verl + SQLAct GRPO)"
+license = {text = "Apache-2.0"}
+readme = {file = "README.md", content-type = "text/markdown"}
+requires-python = "==3.12.*"
+
+dependencies=[
+  'accelerate',
+  'codetiming',
+  'datasets',
+  'dill',
+  'hydra-core',
+  'numpy',
+  'pandas',
+  'peft',
+  'pyarrow>=15.0.0',
+  'pybind11',
+  'pylatexenc',
+  'ray[default]>=2.10',
+  'tensordict<=0.6.2',
+  'torchdata',
+  'transformers',
+  'wandb',
+  "hf_transfer",
+  "func_timeout",
+  "sympy",
+  "torch-memory-saver>=0.0.5",
+  'vllm>=0.7.3',
+]
+
+[tool.uv]
+override-dependencies = ["ray==2.43.0", "xgrammar==0.1.17"]
+
+[project.optional-dependencies]
+sql = [
+    'sglang[all]==0.4.4.post4',
+    "flashinfer-python@https://github.com/flashinfer-ai/flashinfer/releases/download/v0.2.3/flashinfer_python-0.2.3+cu124torch2.5-cp38-abi3-linux_x86_64.whl#sha256=74fe5bf85068e12cf93100f47b932ed0c7a8547ec93905f62eab604dccbb68bd",
+    "flash-attn@https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1+cu12torch2.5cxx11abifalse-cp312-cp312-linux_x86_64.whl"
+]
+test = ['pytest', 'yapf', 'py-spy']
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {file = "verl/version/version"}
+
+[tool.setuptools.package-dir]
+"" = "."
+
+[tool.setuptools.package-data]
+verl = [
+  "version/*",
+  "trainer/config/*.yaml"
+]

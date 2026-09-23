@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+.venv/
+venv/
+.env
+
+outputs/
+logs/
+*.log
+
+.DS_Store
+.idea/
+.vscode/
+
+EFPL/**/wandb/
+EFPL/**/checkpoints/
+EFPL/**/.venv/
+WANDB_API_KEY
+
+# Benchmark datasets
+data/
+
+# Generated artifacts
+*.sqlite
+*.parquet

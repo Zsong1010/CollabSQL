@@ -1,0 +1,24 @@
+{
+  "method": "CollabSQL (Hor.)",
+  "setting": "distributed",
+  "topology": "horizontal_n4",
+  "llm": "7B",
+  "train_data": "Bird-dev",
+  "results": {
+    "bird_dev": {
+      "correct": 1120,
+      "total": 1534,
+      "execution_accuracy_pct": 73.0
+    },
+    "spider_test": {
+      "correct": 1776,
+      "total": 2147,
+      "execution_accuracy_pct": 82.74
+    },
+    "spider_dk": {
+      "correct": 338,
+      "total": 532,
+      "execution_accuracy_pct": 63.62
+    }
+  }
+}
