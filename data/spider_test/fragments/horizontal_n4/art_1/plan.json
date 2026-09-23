@@ -1,0 +1,114 @@
+{
+  "db_id": "art_1",
+  "source_db": "data/spider_test/databases/art_1/art_1.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/art_1/art_1_A1.sqlite",
+      "tables": [
+        "Artists",
+        "Paintings",
+        "Sculptures"
+      ],
+      "description": "Agent A1 holds a horizontal partition of art_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Artists": [
+            0,
+            1
+          ],
+          "Paintings": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            9
+          ],
+          "Sculptures": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/art_1/art_1_A2.sqlite",
+      "tables": [
+        "Artists",
+        "Paintings",
+        "Sculptures"
+      ],
+      "description": "Agent A2 holds a horizontal partition of art_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Artists": [
+            3,
+            4
+          ],
+          "Paintings": [
+            0,
+            7,
+            8,
+            10,
+            12
+          ],
+          "Sculptures": [
+            2
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/art_1/art_1_A3.sqlite",
+      "tables": [
+        "Artists",
+        "Paintings",
+        "Sculptures"
+      ],
+      "description": "Agent A3 holds a horizontal partition of art_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Artists": [
+            2
+          ],
+          "Paintings": [],
+          "Sculptures": [
+            0
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/art_1/art_1_A4.sqlite",
+      "tables": [
+        "Artists",
+        "Paintings",
+        "Sculptures"
+      ],
+      "description": "Agent A4 holds a horizontal partition of art_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Artists": [],
+          "Paintings": [
+            3,
+            11,
+            13
+          ],
+          "Sculptures": [
+            3
+          ]
+        }
+      }
+    }
+  ]
+}

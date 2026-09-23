@@ -1,0 +1,81 @@
+{
+  "method": "CollabSQL (Ours)",
+  "topology": "horizontal_n4",
+  "backend": "cached",
+  "correct": 5,
+  "total": 5,
+  "execution_accuracy_pct": 100.0,
+  "messages_per_query": 11.0,
+  "results": [
+    {
+      "question_id": 0,
+      "db_id": "soccer_3",
+      "question": "How many clubs are there?",
+      "ground_truth_sql": "SELECT count(*) FROM club",
+      "predicted_sql": "SELECT COUNT(*) FROM club;",
+      "execution_accuracy": 1,
+      "message_count": 11,
+      "e2e_latency_ms": 2.81,
+      "coord_latency_ms": 2.008,
+      "composition_latency_ms": 0.422,
+      "decompose_mode": "rule",
+      "composition_mode": "rule_identical_sql"
+    },
+    {
+      "question_id": 1,
+      "db_id": "soccer_3",
+      "question": "Count the number of clubs.",
+      "ground_truth_sql": "SELECT count(*) FROM club",
+      "predicted_sql": "SELECT COUNT(*) FROM club;",
+      "execution_accuracy": 1,
+      "message_count": 11,
+      "e2e_latency_ms": 2.063,
+      "coord_latency_ms": 1.733,
+      "composition_latency_ms": 0.054,
+      "decompose_mode": "rule",
+      "composition_mode": "rule_identical_sql"
+    },
+    {
+      "question_id": 2,
+      "db_id": "soccer_3",
+      "question": "List the name of clubs in ascending alphabetical order.",
+      "ground_truth_sql": "SELECT Name FROM club ORDER BY Name ASC",
+      "predicted_sql": "SELECT Name FROM club ORDER BY Name ASC;",
+      "execution_accuracy": 1,
+      "message_count": 11,
+      "e2e_latency_ms": 2.352,
+      "coord_latency_ms": 1.996,
+      "composition_latency_ms": 0.132,
+      "decompose_mode": "rule",
+      "composition_mode": "rule_identical_sql"
+    },
+    {
+      "question_id": 3,
+      "db_id": "soccer_3",
+      "question": "What are the names of clubs, ordered alphabetically?",
+      "ground_truth_sql": "SELECT Name FROM club ORDER BY Name ASC",
+      "predicted_sql": "SELECT Name FROM club ORDER BY Name ASC;",
+      "execution_accuracy": 1,
+      "message_count": 11,
+      "e2e_latency_ms": 1.957,
+      "coord_latency_ms": 1.67,
+      "composition_latency_ms": 0.048,
+      "decompose_mode": "rule",
+      "composition_mode": "rule_identical_sql"
+    },
+    {
+      "question_id": 4,
+      "db_id": "soccer_3",
+      "question": "What are the managers and captains of clubs?",
+      "ground_truth_sql": "SELECT Manager ,  Captain FROM club",
+      "predicted_sql": "SELECT Manager, Captain FROM club;",
+      "execution_accuracy": 1,
+      "message_count": 11,
+      "e2e_latency_ms": 2.005,
+      "coord_latency_ms": 1.733,
+      "composition_latency_ms": 0.053,
+      "decompose_mode": "rule",
+      "composition_mode": "rule_identical_sql"
+    }
+  ]
+}

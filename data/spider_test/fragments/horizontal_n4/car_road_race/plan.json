@@ -1,0 +1,101 @@
+{
+  "db_id": "car_road_race",
+  "source_db": "data/spider_test/databases/car_road_race/car_road_race.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/car_road_race/car_road_race_A1.sqlite",
+      "tables": [
+        "driver",
+        "race"
+      ],
+      "description": "Agent A1 holds a horizontal partition of car_road_race database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "driver": [
+            0,
+            1,
+            6,
+            7,
+            9,
+            10
+          ],
+          "race": [
+            0,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/car_road_race/car_road_race_A2.sqlite",
+      "tables": [
+        "driver",
+        "race"
+      ],
+      "description": "Agent A2 holds a horizontal partition of car_road_race database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "driver": [
+            3,
+            4,
+            5
+          ],
+          "race": [
+            1,
+            2,
+            4,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/car_road_race/car_road_race_A3.sqlite",
+      "tables": [
+        "driver",
+        "race"
+      ],
+      "description": "Agent A3 holds a horizontal partition of car_road_race database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "driver": [
+            2
+          ],
+          "race": [
+            8
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/car_road_race/car_road_race_A4.sqlite",
+      "tables": [
+        "driver",
+        "race"
+      ],
+      "description": "Agent A4 holds a horizontal partition of car_road_race database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "driver": [
+            8
+          ],
+          "race": [
+            5,
+            7
+          ]
+        }
+      }
+    }
+  ]
+}

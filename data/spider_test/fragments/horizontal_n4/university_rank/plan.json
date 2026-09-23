@@ -1,0 +1,143 @@
+{
+  "db_id": "university_rank",
+  "source_db": "data/spider_test/databases/university_rank/university_rank.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/university_rank/university_rank_A1.sqlite",
+      "tables": [
+        "university",
+        "overall_ranking",
+        "major",
+        "major_ranking"
+      ],
+      "description": "Agent A1 holds a horizontal partition of university_rank database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "university": [
+            0,
+            1,
+            6,
+            7,
+            9,
+            10,
+            11
+          ],
+          "overall_ranking": [
+            1,
+            7
+          ],
+          "major": [
+            2,
+            3
+          ],
+          "major_ranking": [
+            0,
+            4,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/university_rank/university_rank_A2.sqlite",
+      "tables": [
+        "university",
+        "overall_ranking",
+        "major",
+        "major_ranking"
+      ],
+      "description": "Agent A2 holds a horizontal partition of university_rank database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "university": [
+            3,
+            4,
+            5,
+            12
+          ],
+          "overall_ranking": [
+            0,
+            2,
+            4,
+            8,
+            12
+          ],
+          "major": [
+            0
+          ],
+          "major_ranking": []
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/university_rank/university_rank_A3.sqlite",
+      "tables": [
+        "university",
+        "overall_ranking",
+        "major",
+        "major_ranking"
+      ],
+      "description": "Agent A3 holds a horizontal partition of university_rank database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "university": [
+            2
+          ],
+          "overall_ranking": [
+            6,
+            10,
+            11
+          ],
+          "major": [
+            1
+          ],
+          "major_ranking": [
+            1,
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/university_rank/university_rank_A4.sqlite",
+      "tables": [
+        "university",
+        "overall_ranking",
+        "major",
+        "major_ranking"
+      ],
+      "description": "Agent A4 holds a horizontal partition of university_rank database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "university": [
+            8
+          ],
+          "overall_ranking": [
+            3,
+            5,
+            9
+          ],
+          "major": [
+            4
+          ],
+          "major_ranking": [
+            5,
+            7
+          ]
+        }
+      }
+    }
+  ]
+}

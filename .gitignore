@@ -1,27 +1,24 @@
+# Python cache
 __pycache__/
 *.py[cod]
 *.egg-info/
 
+# Virtual environments
 .venv/
 venv/
-.env
+EFPL/**/.venv/
 
-outputs/
+# Secrets
+.env
+.env.*
+WANDB_API_KEY
+
+# Runtime / cache
 logs/
 *.log
+EFPL/**/wandb/
 
+# IDE / OS
 .DS_Store
 .idea/
 .vscode/
-
-EFPL/**/wandb/
-EFPL/**/checkpoints/
-EFPL/**/.venv/
-WANDB_API_KEY
-
-# Benchmark datasets
-data/
-
-# Generated artifacts
-*.sqlite
-*.parquet

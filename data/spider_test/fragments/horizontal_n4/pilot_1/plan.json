@@ -1,0 +1,97 @@
+{
+  "db_id": "pilot_1",
+  "source_db": "data/spider_test/databases/pilot_1/pilot_1.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/pilot_1/pilot_1_A1.sqlite",
+      "tables": [
+        "PilotSkills",
+        "Hangar"
+      ],
+      "description": "Agent A1 holds a horizontal partition of pilot_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "PilotSkills": [
+            0,
+            1,
+            6,
+            7,
+            9,
+            10,
+            11
+          ],
+          "Hangar": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/pilot_1/pilot_1_A2.sqlite",
+      "tables": [
+        "PilotSkills",
+        "Hangar"
+      ],
+      "description": "Agent A2 holds a horizontal partition of pilot_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "PilotSkills": [
+            3,
+            4,
+            5,
+            12
+          ],
+          "Hangar": [
+            0,
+            2
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/pilot_1/pilot_1_A3.sqlite",
+      "tables": [
+        "PilotSkills",
+        "Hangar"
+      ],
+      "description": "Agent A3 holds a horizontal partition of pilot_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "PilotSkills": [
+            2
+          ],
+          "Hangar": []
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/pilot_1/pilot_1_A4.sqlite",
+      "tables": [
+        "PilotSkills",
+        "Hangar"
+      ],
+      "description": "Agent A4 holds a horizontal partition of pilot_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "PilotSkills": [
+            8
+          ],
+          "Hangar": [
+            3
+          ]
+        }
+      }
+    }
+  ]
+}

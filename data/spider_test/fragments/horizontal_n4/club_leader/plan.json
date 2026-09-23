@@ -1,0 +1,120 @@
+{
+  "db_id": "club_leader",
+  "source_db": "data/spider_test/databases/club_leader/club_leader.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/club_leader/club_leader_A1.sqlite",
+      "tables": [
+        "member",
+        "club",
+        "club_leader"
+      ],
+      "description": "Agent A1 holds a horizontal partition of club_leader database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "member": [
+            0,
+            1,
+            6,
+            7,
+            9
+          ],
+          "club": [
+            0,
+            1,
+            4,
+            10
+          ],
+          "club_leader": []
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/club_leader/club_leader_A2.sqlite",
+      "tables": [
+        "member",
+        "club",
+        "club_leader"
+      ],
+      "description": "Agent A2 holds a horizontal partition of club_leader database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "member": [
+            3,
+            4,
+            5
+          ],
+          "club": [
+            2,
+            3,
+            5,
+            7,
+            11
+          ],
+          "club_leader": [
+            3,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/club_leader/club_leader_A3.sqlite",
+      "tables": [
+        "member",
+        "club",
+        "club_leader"
+      ],
+      "description": "Agent A3 holds a horizontal partition of club_leader database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "member": [
+            2
+          ],
+          "club": [
+            9
+          ],
+          "club_leader": [
+            1,
+            2,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/club_leader/club_leader_A4.sqlite",
+      "tables": [
+        "member",
+        "club",
+        "club_leader"
+      ],
+      "description": "Agent A4 holds a horizontal partition of club_leader database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "member": [
+            8
+          ],
+          "club": [
+            6,
+            8
+          ],
+          "club_leader": [
+            0
+          ]
+        }
+      }
+    }
+  ]
+}

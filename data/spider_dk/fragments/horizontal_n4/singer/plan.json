@@ -1,0 +1,95 @@
+{
+  "db_id": "singer",
+  "source_db": "data/spider_dk/databases/singer/singer.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_dk/fragments/horizontal_n4/singer/singer_A1.sqlite",
+      "tables": [
+        "singer",
+        "song"
+      ],
+      "description": "Agent A1 holds a horizontal partition of singer database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "singer": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "song": [
+            1,
+            2,
+            3,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_dk/fragments/horizontal_n4/singer/singer_A2.sqlite",
+      "tables": [
+        "singer",
+        "song"
+      ],
+      "description": "Agent A2 holds a horizontal partition of singer database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "singer": [
+            3,
+            4,
+            5
+          ],
+          "song": [
+            4,
+            5,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_dk/fragments/horizontal_n4/singer/singer_A3.sqlite",
+      "tables": [
+        "singer",
+        "song"
+      ],
+      "description": "Agent A3 holds a horizontal partition of singer database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "singer": [
+            2
+          ],
+          "song": []
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_dk/fragments/horizontal_n4/singer/singer_A4.sqlite",
+      "tables": [
+        "singer",
+        "song"
+      ],
+      "description": "Agent A4 holds a horizontal partition of singer database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "singer": [],
+          "song": [
+            0
+          ]
+        }
+      }
+    }
+  ]
+}

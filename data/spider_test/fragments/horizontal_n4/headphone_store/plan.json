@@ -1,0 +1,121 @@
+{
+  "db_id": "headphone_store",
+  "source_db": "data/spider_test/databases/headphone_store/headphone_store.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/headphone_store/headphone_store_A1.sqlite",
+      "tables": [
+        "headphone",
+        "store",
+        "stock"
+      ],
+      "description": "Agent A1 holds a horizontal partition of headphone_store database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "headphone": [
+            0,
+            1,
+            6,
+            7,
+            9,
+            10
+          ],
+          "store": [
+            0,
+            3
+          ],
+          "stock": [
+            0
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/headphone_store/headphone_store_A2.sqlite",
+      "tables": [
+        "headphone",
+        "store",
+        "stock"
+      ],
+      "description": "Agent A2 holds a horizontal partition of headphone_store database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "headphone": [
+            3,
+            4,
+            5
+          ],
+          "store": [
+            1,
+            2,
+            4,
+            6
+          ],
+          "stock": [
+            1,
+            5,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/headphone_store/headphone_store_A3.sqlite",
+      "tables": [
+        "headphone",
+        "store",
+        "stock"
+      ],
+      "description": "Agent A3 holds a horizontal partition of headphone_store database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "headphone": [
+            2
+          ],
+          "store": [
+            8
+          ],
+          "stock": [
+            3,
+            4,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/headphone_store/headphone_store_A4.sqlite",
+      "tables": [
+        "headphone",
+        "store",
+        "stock"
+      ],
+      "description": "Agent A4 holds a horizontal partition of headphone_store database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "headphone": [
+            8
+          ],
+          "store": [
+            5,
+            7
+          ],
+          "stock": [
+            2
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "db_id": "new_pets_1",
+  "source_db": "data/spider_dk/databases/new_pets_1/new_pets_1.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_dk/fragments/horizontal_n4/new_pets_1/new_pets_1_A1.sqlite",
+      "tables": [
+        "Student",
+        "Has_Pet",
+        "Pets"
+      ],
+      "description": "Agent A1 holds a horizontal partition of new_pets_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Student": [
+            0,
+            1,
+            6,
+            7,
+            9,
+            10,
+            11,
+            14,
+            20,
+            28,
+            29,
+            31
+          ],
+          "Has_Pet": [
+            1
+          ],
+          "Pets": [
+            0,
+            2
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_dk/fragments/horizontal_n4/new_pets_1/new_pets_1_A2.sqlite",
+      "tables": [
+        "Student",
+        "Has_Pet",
+        "Pets"
+      ],
+      "description": "Agent A2 holds a horizontal partition of new_pets_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Student": [
+            3,
+            4,
+            5,
+            12,
+            13,
+            15,
+            17,
+            21,
+            25,
+            26
+          ],
+          "Has_Pet": [],
+          "Pets": []
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_dk/fragments/horizontal_n4/new_pets_1/new_pets_1_A3.sqlite",
+      "tables": [
+        "Student",
+        "Has_Pet",
+        "Pets"
+      ],
+      "description": "Agent A3 holds a horizontal partition of new_pets_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Student": [
+            2,
+            19,
+            23,
+            24,
+            27,
+            32,
+            33
+          ],
+          "Has_Pet": [
+            0
+          ],
+          "Pets": []
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_dk/fragments/horizontal_n4/new_pets_1/new_pets_1_A4.sqlite",
+      "tables": [
+        "Student",
+        "Has_Pet",
+        "Pets"
+      ],
+      "description": "Agent A4 holds a horizontal partition of new_pets_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Student": [
+            8,
+            16,
+            18,
+            22,
+            30
+          ],
+          "Has_Pet": [
+            2
+          ],
+          "Pets": [
+            1
+          ]
+        }
+      }
+    }
+  ]
+}

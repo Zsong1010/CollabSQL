@@ -1,0 +1,341 @@
+{
+  "db_id": "real_estate_rentals",
+  "source_db": "data/spider_test/databases/real_estate_rentals/real_estate_rentals.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/real_estate_rentals/real_estate_rentals_A1.sqlite",
+      "tables": [
+        "Ref_Age_Categories",
+        "Ref_Property_Types",
+        "Ref_Room_Types",
+        "Ref_User_Categories",
+        "Addresses",
+        "Features",
+        "Users",
+        "Properties",
+        "Property_Features",
+        "Property_Photos",
+        "Rooms",
+        "User_Property_History",
+        "User_Searches"
+      ],
+      "description": "Agent A1 holds a horizontal partition of real_estate_rentals database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Ref_Age_Categories": [
+            0,
+            1
+          ],
+          "Ref_Property_Types": [],
+          "Ref_Room_Types": [
+            0,
+            1,
+            3
+          ],
+          "Ref_User_Categories": [
+            0,
+            1
+          ],
+          "Addresses": [
+            1,
+            7
+          ],
+          "Features": [
+            0,
+            1,
+            3
+          ],
+          "Users": [
+            2,
+            4,
+            6,
+            10,
+            11,
+            14
+          ],
+          "Properties": [
+            1,
+            11
+          ],
+          "Property_Features": [
+            5,
+            7,
+            11
+          ],
+          "Property_Photos": [
+            14
+          ],
+          "Rooms": [
+            0,
+            1,
+            5,
+            10,
+            11,
+            14
+          ],
+          "User_Property_History": [
+            4,
+            7,
+            13
+          ],
+          "User_Searches": [
+            1,
+            2,
+            6,
+            8,
+            9,
+            11
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/real_estate_rentals/real_estate_rentals_A2.sqlite",
+      "tables": [
+        "Ref_Age_Categories",
+        "Ref_Property_Types",
+        "Ref_Room_Types",
+        "Ref_User_Categories",
+        "Addresses",
+        "Features",
+        "Users",
+        "Properties",
+        "Property_Features",
+        "Property_Photos",
+        "Rooms",
+        "User_Property_History",
+        "User_Searches"
+      ],
+      "description": "Agent A2 holds a horizontal partition of real_estate_rentals database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Ref_Age_Categories": [],
+          "Ref_Property_Types": [
+            0,
+            1,
+            2
+          ],
+          "Ref_Room_Types": [],
+          "Ref_User_Categories": [
+            2
+          ],
+          "Addresses": [
+            0,
+            2,
+            4,
+            8,
+            12,
+            13
+          ],
+          "Features": [],
+          "Users": [
+            9,
+            12
+          ],
+          "Properties": [
+            0,
+            6,
+            9,
+            12,
+            13,
+            14
+          ],
+          "Property_Features": [
+            3,
+            6,
+            12,
+            14
+          ],
+          "Property_Photos": [
+            3,
+            5,
+            6,
+            11,
+            12
+          ],
+          "Rooms": [
+            2,
+            3
+          ],
+          "User_Property_History": [
+            2,
+            6,
+            9,
+            10,
+            12
+          ],
+          "User_Searches": [
+            5,
+            7,
+            12,
+            13
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/real_estate_rentals/real_estate_rentals_A3.sqlite",
+      "tables": [
+        "Ref_Age_Categories",
+        "Ref_Property_Types",
+        "Ref_Room_Types",
+        "Ref_User_Categories",
+        "Addresses",
+        "Features",
+        "Users",
+        "Properties",
+        "Property_Features",
+        "Property_Photos",
+        "Rooms",
+        "User_Property_History",
+        "User_Searches"
+      ],
+      "description": "Agent A3 holds a horizontal partition of real_estate_rentals database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Ref_Age_Categories": [
+            2
+          ],
+          "Ref_Property_Types": [],
+          "Ref_Room_Types": [],
+          "Ref_User_Categories": [],
+          "Addresses": [
+            6,
+            10,
+            11,
+            14
+          ],
+          "Features": [
+            4
+          ],
+          "Users": [
+            0,
+            1,
+            7,
+            8,
+            13
+          ],
+          "Properties": [
+            3,
+            5,
+            7,
+            8,
+            10
+          ],
+          "Property_Features": [
+            2,
+            4,
+            8,
+            10,
+            13
+          ],
+          "Property_Photos": [
+            4,
+            7,
+            10
+          ],
+          "Rooms": [
+            9,
+            12,
+            13
+          ],
+          "User_Property_History": [
+            0,
+            5,
+            8,
+            11,
+            14
+          ],
+          "User_Searches": [
+            3,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/real_estate_rentals/real_estate_rentals_A4.sqlite",
+      "tables": [
+        "Ref_Age_Categories",
+        "Ref_Property_Types",
+        "Ref_Room_Types",
+        "Ref_User_Categories",
+        "Addresses",
+        "Features",
+        "Users",
+        "Properties",
+        "Property_Features",
+        "Property_Photos",
+        "Rooms",
+        "User_Property_History",
+        "User_Searches"
+      ],
+      "description": "Agent A4 holds a horizontal partition of real_estate_rentals database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Ref_Age_Categories": [],
+          "Ref_Property_Types": [],
+          "Ref_Room_Types": [
+            2
+          ],
+          "Ref_User_Categories": [],
+          "Addresses": [
+            3,
+            5,
+            9
+          ],
+          "Features": [
+            2
+          ],
+          "Users": [
+            3,
+            5
+          ],
+          "Properties": [
+            2,
+            4
+          ],
+          "Property_Features": [
+            0,
+            1,
+            9
+          ],
+          "Property_Photos": [
+            0,
+            1,
+            2,
+            8,
+            9,
+            13
+          ],
+          "Rooms": [
+            4,
+            6,
+            7,
+            8
+          ],
+          "User_Property_History": [
+            1,
+            3
+          ],
+          "User_Searches": [
+            0,
+            10,
+            14
+          ]
+        }
+      }
+    }
+  ]
+}

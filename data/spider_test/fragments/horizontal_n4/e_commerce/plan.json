@@ -1,0 +1,257 @@
+{
+  "db_id": "e_commerce",
+  "source_db": "data/spider_test/databases/e_commerce/e_commerce.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/e_commerce/e_commerce_A1.sqlite",
+      "tables": [
+        "Products",
+        "Customers",
+        "Customer_Payment_Methods",
+        "Invoices",
+        "Orders",
+        "Order_Items",
+        "Shipments",
+        "Shipment_Items"
+      ],
+      "description": "Agent A1 holds a horizontal partition of e_commerce database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Products": [
+            0,
+            1
+          ],
+          "Customers": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            9
+          ],
+          "Customer_Payment_Methods": [
+            0,
+            8,
+            9,
+            11
+          ],
+          "Invoices": [
+            0,
+            2,
+            4,
+            8,
+            9,
+            12,
+            14
+          ],
+          "Orders": [
+            9,
+            18
+          ],
+          "Order_Items": [
+            0,
+            4
+          ],
+          "Shipments": [
+            7,
+            8,
+            9,
+            13
+          ],
+          "Shipment_Items": [
+            3,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/e_commerce/e_commerce_A2.sqlite",
+      "tables": [
+        "Products",
+        "Customers",
+        "Customer_Payment_Methods",
+        "Invoices",
+        "Orders",
+        "Order_Items",
+        "Shipments",
+        "Shipment_Items"
+      ],
+      "description": "Agent A2 holds a horizontal partition of e_commerce database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Products": [
+            3,
+            4
+          ],
+          "Customers": [
+            0,
+            7,
+            8,
+            10,
+            12
+          ],
+          "Customer_Payment_Methods": [
+            1,
+            5,
+            6
+          ],
+          "Invoices": [
+            7,
+            10,
+            13
+          ],
+          "Orders": [
+            4,
+            7,
+            10,
+            11,
+            12,
+            16,
+            19
+          ],
+          "Order_Items": [
+            5,
+            7,
+            11,
+            13,
+            14
+          ],
+          "Shipments": [
+            4,
+            5,
+            10,
+            11
+          ],
+          "Shipment_Items": []
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/e_commerce/e_commerce_A3.sqlite",
+      "tables": [
+        "Products",
+        "Customers",
+        "Customer_Payment_Methods",
+        "Invoices",
+        "Orders",
+        "Order_Items",
+        "Shipments",
+        "Shipment_Items"
+      ],
+      "description": "Agent A3 holds a horizontal partition of e_commerce database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Products": [
+            2
+          ],
+          "Customers": [
+            14
+          ],
+          "Customer_Payment_Methods": [
+            3,
+            4,
+            7,
+            12,
+            13,
+            14
+          ],
+          "Invoices": [
+            5,
+            6,
+            11
+          ],
+          "Orders": [
+            1,
+            3,
+            5,
+            6,
+            8,
+            15,
+            17
+          ],
+          "Order_Items": [
+            1,
+            3,
+            6,
+            12
+          ],
+          "Shipments": [
+            0,
+            3
+          ],
+          "Shipment_Items": [
+            2,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/e_commerce/e_commerce_A4.sqlite",
+      "tables": [
+        "Products",
+        "Customers",
+        "Customer_Payment_Methods",
+        "Invoices",
+        "Orders",
+        "Order_Items",
+        "Shipments",
+        "Shipment_Items"
+      ],
+      "description": "Agent A4 holds a horizontal partition of e_commerce database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Products": [],
+          "Customers": [
+            3,
+            11,
+            13
+          ],
+          "Customer_Payment_Methods": [
+            2,
+            10
+          ],
+          "Invoices": [
+            1,
+            3
+          ],
+          "Orders": [
+            0,
+            2,
+            13,
+            14
+          ],
+          "Order_Items": [
+            2,
+            8,
+            9,
+            10
+          ],
+          "Shipments": [
+            1,
+            2,
+            6,
+            12,
+            14
+          ],
+          "Shipment_Items": [
+            0,
+            1
+          ]
+        }
+      }
+    }
+  ]
+}

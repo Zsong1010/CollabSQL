@@ -1,0 +1,135 @@
+{
+  "db_id": "conference",
+  "source_db": "data/spider_test/databases/conference/conference.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/conference/conference_A1.sqlite",
+      "tables": [
+        "conference",
+        "institution",
+        "staff",
+        "conference_participation"
+      ],
+      "description": "Agent A1 holds a horizontal partition of conference database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "conference": [
+            0,
+            1
+          ],
+          "institution": [
+            0,
+            1,
+            3,
+            4,
+            5,
+            8
+          ],
+          "staff": [
+            4
+          ],
+          "conference_participation": [
+            5,
+            6,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/conference/conference_A2.sqlite",
+      "tables": [
+        "conference",
+        "institution",
+        "staff",
+        "conference_participation"
+      ],
+      "description": "Agent A2 holds a horizontal partition of conference database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "conference": [
+            3,
+            4,
+            5
+          ],
+          "institution": [
+            6,
+            7,
+            9
+          ],
+          "staff": [
+            1,
+            5
+          ],
+          "conference_participation": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/conference/conference_A3.sqlite",
+      "tables": [
+        "conference",
+        "institution",
+        "staff",
+        "conference_participation"
+      ],
+      "description": "Agent A3 holds a horizontal partition of conference database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "conference": [
+            2
+          ],
+          "institution": [],
+          "staff": [
+            3
+          ],
+          "conference_participation": [
+            0,
+            1,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/conference/conference_A4.sqlite",
+      "tables": [
+        "conference",
+        "institution",
+        "staff",
+        "conference_participation"
+      ],
+      "description": "Agent A4 holds a horizontal partition of conference database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "conference": [],
+          "institution": [
+            2
+          ],
+          "staff": [
+            0,
+            2,
+            6
+          ],
+          "conference_participation": [
+            7
+          ]
+        }
+      }
+    }
+  ]
+}

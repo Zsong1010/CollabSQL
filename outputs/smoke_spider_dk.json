@@ -1,0 +1,81 @@
+{
+  "method": "CollabSQL (Ours)",
+  "topology": "horizontal_n4",
+  "backend": "cached",
+  "correct": 4,
+  "total": 5,
+  "execution_accuracy_pct": 80.0,
+  "messages_per_query": 13.0,
+  "results": [
+    {
+      "question_id": 0,
+      "db_id": "new_concert_singer",
+      "question": "How many singers do we have?",
+      "ground_truth_sql": "SELECT count(*) FROM singer",
+      "predicted_sql": "SELECT COUNT(*) FROM singer;",
+      "execution_accuracy": 1,
+      "message_count": 13,
+      "e2e_latency_ms": 3.147,
+      "coord_latency_ms": 2.337,
+      "composition_latency_ms": 0.385,
+      "decompose_mode": "rule",
+      "composition_mode": "rule_identical_sql"
+    },
+    {
+      "question_id": 1,
+      "db_id": "new_concert_singer",
+      "question": "What is the total number of singers?",
+      "ground_truth_sql": "SELECT count(*) FROM singer",
+      "predicted_sql": "SELECT COUNT(*) FROM singer;",
+      "execution_accuracy": 1,
+      "message_count": 13,
+      "e2e_latency_ms": 2.174,
+      "coord_latency_ms": 1.808,
+      "composition_latency_ms": 0.052,
+      "decompose_mode": "rule",
+      "composition_mode": "rule_identical_sql"
+    },
+    {
+      "question_id": 2,
+      "db_id": "new_concert_singer",
+      "question": "Show name, country for all singers ordered by age from the oldest to the youngest.",
+      "ground_truth_sql": "SELECT name ,  country  FROM singer ORDER BY birthday ASC",
+      "predicted_sql": "SELECT Name, Country FROM singer ORDER BY Birthday ASC;",
+      "execution_accuracy": 1,
+      "message_count": 13,
+      "e2e_latency_ms": 2.167,
+      "coord_latency_ms": 1.749,
+      "composition_latency_ms": 0.129,
+      "decompose_mode": "rule",
+      "composition_mode": "rule_identical_sql"
+    },
+    {
+      "question_id": 3,
+      "db_id": "new_concert_singer",
+      "question": "What are the names, countries for every singer in descending order of age?",
+      "ground_truth_sql": "SELECT name ,  country  FROM singer ORDER BY birthday ASC",
+      "predicted_sql": "SELECT Name, Country FROM singer ORDER BY strftime('%Y', 'now') - strftime('%Y', Birthday) DESC;",
+      "execution_accuracy": 1,
+      "message_count": 13,
+      "e2e_latency_ms": 2.112,
+      "coord_latency_ms": 1.788,
+      "composition_latency_ms": 0.044,
+      "decompose_mode": "rule",
+      "composition_mode": "rule_identical_sql"
+    },
+    {
+      "question_id": 4,
+      "db_id": "new_concert_singer",
+      "question": "What is the average, minimum, and maximum id of all French singers?",
+      "ground_truth_sql": "SELECT avg(Singer_ID) ,  min(Singer_ID) ,  max(Singer_ID) FROM singer WHERE country  =  'France'",
+      "predicted_sql": "SELECT min(Singer_ID), max(Singer_ID), avg(Singer_ID) FROM singer WHERE Country = 'France';",
+      "execution_accuracy": 0,
+      "message_count": 13,
+      "e2e_latency_ms": 2.066,
+      "coord_latency_ms": 1.751,
+      "composition_latency_ms": 0.04,
+      "decompose_mode": "rule",
+      "composition_mode": "rule_identical_sql"
+    }
+  ]
+}

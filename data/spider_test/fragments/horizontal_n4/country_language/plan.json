@@ -1,0 +1,123 @@
+{
+  "db_id": "country_language",
+  "source_db": "data/spider_test/databases/country_language/country_language.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/country_language/country_language_A1.sqlite",
+      "tables": [
+        "languages",
+        "countries",
+        "official_languages"
+      ],
+      "description": "Agent A1 holds a horizontal partition of country_language database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "languages": [
+            0,
+            1,
+            6,
+            7,
+            9
+          ],
+          "countries": [
+            0,
+            1,
+            4
+          ],
+          "official_languages": [
+            1,
+            9,
+            10
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/country_language/country_language_A2.sqlite",
+      "tables": [
+        "languages",
+        "countries",
+        "official_languages"
+      ],
+      "description": "Agent A2 holds a horizontal partition of country_language database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "languages": [
+            3,
+            4,
+            5
+          ],
+          "countries": [
+            2,
+            3,
+            5,
+            7
+          ],
+          "official_languages": [
+            2,
+            6,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/country_language/country_language_A3.sqlite",
+      "tables": [
+        "languages",
+        "countries",
+        "official_languages"
+      ],
+      "description": "Agent A3 holds a horizontal partition of country_language database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "languages": [
+            2
+          ],
+          "countries": [],
+          "official_languages": [
+            0,
+            4,
+            5,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/country_language/country_language_A4.sqlite",
+      "tables": [
+        "languages",
+        "countries",
+        "official_languages"
+      ],
+      "description": "Agent A4 holds a horizontal partition of country_language database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "languages": [
+            8
+          ],
+          "countries": [
+            6,
+            8
+          ],
+          "official_languages": [
+            3,
+            11
+          ]
+        }
+      }
+    }
+  ]
+}

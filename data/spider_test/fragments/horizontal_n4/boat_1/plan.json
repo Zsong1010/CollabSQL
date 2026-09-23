@@ -1,0 +1,96 @@
+{
+  "db_id": "boat_1",
+  "source_db": "data/spider_test/databases/boat_1/boat_1.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/boat_1/boat_1_A1.sqlite",
+      "tables": [
+        "Sailors",
+        "Boats",
+        "Reserves"
+      ],
+      "description": "Agent A1 holds a horizontal partition of boat_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Sailors": [
+            0,
+            1
+          ],
+          "Boats": [],
+          "Reserves": [
+            0,
+            1,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/boat_1/boat_1_A2.sqlite",
+      "tables": [
+        "Sailors",
+        "Boats",
+        "Reserves"
+      ],
+      "description": "Agent A2 holds a horizontal partition of boat_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Sailors": [],
+          "Boats": [
+            0,
+            1,
+            2
+          ],
+          "Reserves": []
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/boat_1/boat_1_A3.sqlite",
+      "tables": [
+        "Sailors",
+        "Boats",
+        "Reserves"
+      ],
+      "description": "Agent A3 holds a horizontal partition of boat_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Sailors": [
+            2
+          ],
+          "Boats": [],
+          "Reserves": []
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/boat_1/boat_1_A4.sqlite",
+      "tables": [
+        "Sailors",
+        "Boats",
+        "Reserves"
+      ],
+      "description": "Agent A4 holds a horizontal partition of boat_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Sailors": [],
+          "Boats": [],
+          "Reserves": [
+            2
+          ]
+        }
+      }
+    }
+  ]
+}

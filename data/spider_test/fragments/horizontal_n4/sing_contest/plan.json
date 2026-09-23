@@ -1,0 +1,131 @@
+{
+  "db_id": "sing_contest",
+  "source_db": "data/spider_test/databases/sing_contest/sing_contest.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/sing_contest/sing_contest_A1.sqlite",
+      "tables": [
+        "participants",
+        "songs",
+        "performance_score"
+      ],
+      "description": "Agent A1 holds a horizontal partition of sing_contest database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "participants": [
+            0,
+            1
+          ],
+          "songs": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            9,
+            15,
+            23,
+            24
+          ],
+          "performance_score": [
+            1,
+            5,
+            7,
+            9
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/sing_contest/sing_contest_A2.sqlite",
+      "tables": [
+        "participants",
+        "songs",
+        "performance_score"
+      ],
+      "description": "Agent A2 holds a horizontal partition of sing_contest database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "participants": [
+            3,
+            4
+          ],
+          "songs": [
+            0,
+            7,
+            8,
+            10,
+            12,
+            16,
+            20,
+            21
+          ],
+          "performance_score": []
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/sing_contest/sing_contest_A3.sqlite",
+      "tables": [
+        "participants",
+        "songs",
+        "performance_score"
+      ],
+      "description": "Agent A3 holds a horizontal partition of sing_contest database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "participants": [
+            2
+          ],
+          "songs": [
+            14,
+            18,
+            19,
+            22
+          ],
+          "performance_score": [
+            2,
+            3,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/sing_contest/sing_contest_A4.sqlite",
+      "tables": [
+        "participants",
+        "songs",
+        "performance_score"
+      ],
+      "description": "Agent A4 holds a horizontal partition of sing_contest database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "participants": [],
+          "songs": [
+            3,
+            11,
+            13,
+            17
+          ],
+          "performance_score": [
+            0,
+            6,
+            8
+          ]
+        }
+      }
+    }
+  ]
+}

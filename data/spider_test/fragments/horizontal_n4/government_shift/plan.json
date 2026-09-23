@@ -1,0 +1,230 @@
+{
+  "db_id": "government_shift",
+  "source_db": "data/spider_test/databases/government_shift/government_shift.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/government_shift/government_shift_A1.sqlite",
+      "tables": [
+        "Services",
+        "Customers",
+        "Channels",
+        "Customers_and_Services",
+        "Customer_Interactions",
+        "Integration_Platform",
+        "Analytical_Layer"
+      ],
+      "description": "Agent A1 holds a horizontal partition of government_shift database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Services": [
+            0,
+            1,
+            6
+          ],
+          "Customers": [
+            0,
+            2,
+            3,
+            4,
+            7,
+            13
+          ],
+          "Channels": [],
+          "Customers_and_Services": [
+            1,
+            2,
+            4,
+            8,
+            10,
+            12,
+            16,
+            17
+          ],
+          "Customer_Interactions": [
+            0,
+            2,
+            12
+          ],
+          "Integration_Platform": [
+            6,
+            8,
+            12
+          ],
+          "Analytical_Layer": []
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/government_shift/government_shift_A2.sqlite",
+      "tables": [
+        "Services",
+        "Customers",
+        "Channels",
+        "Customers_and_Services",
+        "Customer_Interactions",
+        "Integration_Platform",
+        "Analytical_Layer"
+      ],
+      "description": "Agent A2 holds a horizontal partition of government_shift database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Services": [
+            3,
+            4,
+            5
+          ],
+          "Customers": [
+            5,
+            6,
+            8,
+            10,
+            14
+          ],
+          "Channels": [
+            3,
+            4
+          ],
+          "Customers_and_Services": [
+            15,
+            18
+          ],
+          "Customer_Interactions": [
+            1,
+            7,
+            10,
+            13,
+            14
+          ],
+          "Integration_Platform": [
+            0,
+            4,
+            7,
+            13
+          ],
+          "Analytical_Layer": [
+            0,
+            4,
+            6,
+            7,
+            12,
+            13
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/government_shift/government_shift_A3.sqlite",
+      "tables": [
+        "Services",
+        "Customers",
+        "Channels",
+        "Customers_and_Services",
+        "Customer_Interactions",
+        "Integration_Platform",
+        "Analytical_Layer"
+      ],
+      "description": "Agent A3 holds a horizontal partition of government_shift database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Services": [
+            2
+          ],
+          "Customers": [
+            12
+          ],
+          "Channels": [
+            1,
+            2
+          ],
+          "Customers_and_Services": [
+            0,
+            5,
+            6,
+            7,
+            13,
+            14,
+            19
+          ],
+          "Customer_Interactions": [
+            4,
+            6,
+            8,
+            9,
+            11
+          ],
+          "Integration_Platform": [
+            3,
+            5,
+            9,
+            11,
+            14
+          ],
+          "Analytical_Layer": [
+            5,
+            8,
+            11
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/government_shift/government_shift_A4.sqlite",
+      "tables": [
+        "Services",
+        "Customers",
+        "Channels",
+        "Customers_and_Services",
+        "Customer_Interactions",
+        "Integration_Platform",
+        "Analytical_Layer"
+      ],
+      "description": "Agent A4 holds a horizontal partition of government_shift database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Services": [],
+          "Customers": [
+            1,
+            9,
+            11
+          ],
+          "Channels": [
+            0
+          ],
+          "Customers_and_Services": [
+            3,
+            9,
+            11
+          ],
+          "Customer_Interactions": [
+            3,
+            5
+          ],
+          "Integration_Platform": [
+            1,
+            2,
+            10
+          ],
+          "Analytical_Layer": [
+            1,
+            2,
+            3,
+            9,
+            10,
+            14
+          ]
+        }
+      }
+    }
+  ]
+}

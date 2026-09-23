@@ -1,0 +1,115 @@
+{
+  "db_id": "restaurant_bills",
+  "source_db": "data/spider_test/databases/restaurant_bills/restaurant_bills.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/restaurant_bills/restaurant_bills_A1.sqlite",
+      "tables": [
+        "customer",
+        "branch",
+        "customer_order"
+      ],
+      "description": "Agent A1 holds a horizontal partition of restaurant_bills database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "customer": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "branch": [
+            1,
+            2,
+            3,
+            6
+          ],
+          "customer_order": [
+            2
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/restaurant_bills/restaurant_bills_A2.sqlite",
+      "tables": [
+        "customer",
+        "branch",
+        "customer_order"
+      ],
+      "description": "Agent A2 holds a horizontal partition of restaurant_bills database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "customer": [
+            3,
+            4,
+            5
+          ],
+          "branch": [
+            4,
+            5,
+            7,
+            9
+          ],
+          "customer_order": [
+            3
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/restaurant_bills/restaurant_bills_A3.sqlite",
+      "tables": [
+        "customer",
+        "branch",
+        "customer_order"
+      ],
+      "description": "Agent A3 holds a horizontal partition of restaurant_bills database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "customer": [
+            2
+          ],
+          "branch": [],
+          "customer_order": [
+            1,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/restaurant_bills/restaurant_bills_A4.sqlite",
+      "tables": [
+        "customer",
+        "branch",
+        "customer_order"
+      ],
+      "description": "Agent A4 holds a horizontal partition of restaurant_bills database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "customer": [],
+          "branch": [
+            0,
+            8
+          ],
+          "customer_order": [
+            0,
+            4
+          ]
+        }
+      }
+    }
+  ]
+}

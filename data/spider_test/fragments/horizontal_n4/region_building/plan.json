@@ -1,0 +1,98 @@
+{
+  "db_id": "region_building",
+  "source_db": "data/spider_test/databases/region_building/region_building.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/region_building/region_building_A1.sqlite",
+      "tables": [
+        "building",
+        "region"
+      ],
+      "description": "Agent A1 holds a horizontal partition of region_building database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "building": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "region": [
+            1,
+            2,
+            3,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/region_building/region_building_A2.sqlite",
+      "tables": [
+        "building",
+        "region"
+      ],
+      "description": "Agent A2 holds a horizontal partition of region_building database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "building": [
+            3,
+            4,
+            5
+          ],
+          "region": [
+            4,
+            5,
+            7,
+            9
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/region_building/region_building_A3.sqlite",
+      "tables": [
+        "building",
+        "region"
+      ],
+      "description": "Agent A3 holds a horizontal partition of region_building database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "building": [
+            2
+          ],
+          "region": []
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/region_building/region_building_A4.sqlite",
+      "tables": [
+        "building",
+        "region"
+      ],
+      "description": "Agent A4 holds a horizontal partition of region_building database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "building": [],
+          "region": [
+            0,
+            8,
+            10
+          ]
+        }
+      }
+    }
+  ]
+}

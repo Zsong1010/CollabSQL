@@ -1,0 +1,93 @@
+{
+  "db_id": "soccer_3",
+  "source_db": "data/spider_test/databases/soccer_3/soccer_3.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/soccer_3/soccer_3_A1.sqlite",
+      "tables": [
+        "club",
+        "player"
+      ],
+      "description": "Agent A1 holds a horizontal partition of soccer_3 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "club": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "player": [
+            0,
+            1,
+            2
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/soccer_3/soccer_3_A2.sqlite",
+      "tables": [
+        "club",
+        "player"
+      ],
+      "description": "Agent A2 holds a horizontal partition of soccer_3 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "club": [
+            3,
+            4,
+            5
+          ],
+          "player": [
+            3,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/soccer_3/soccer_3_A3.sqlite",
+      "tables": [
+        "club",
+        "player"
+      ],
+      "description": "Agent A3 holds a horizontal partition of soccer_3 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "club": [
+            2
+          ],
+          "player": []
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/soccer_3/soccer_3_A4.sqlite",
+      "tables": [
+        "club",
+        "player"
+      ],
+      "description": "Agent A4 holds a horizontal partition of soccer_3 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "club": [
+            8
+          ],
+          "player": []
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "db_id": "vehicle_rent",
+  "source_db": "data/spider_test/databases/vehicle_rent/vehicle_rent.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/vehicle_rent/vehicle_rent_A1.sqlite",
+      "tables": [
+        "Customers",
+        "Discount",
+        "Vehicles",
+        "Renting_history"
+      ],
+      "description": "Agent A1 holds a horizontal partition of vehicle_rent database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Customers": [
+            0,
+            1
+          ],
+          "Discount": [
+            1,
+            2,
+            4
+          ],
+          "Vehicles": [
+            0,
+            1,
+            4
+          ],
+          "Renting_history": [
+            3
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/vehicle_rent/vehicle_rent_A2.sqlite",
+      "tables": [
+        "Customers",
+        "Discount",
+        "Vehicles",
+        "Renting_history"
+      ],
+      "description": "Agent A2 holds a horizontal partition of vehicle_rent database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Customers": [
+            3,
+            4
+          ],
+          "Discount": [
+            0
+          ],
+          "Vehicles": [
+            2,
+            3,
+            5
+          ],
+          "Renting_history": [
+            0,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/vehicle_rent/vehicle_rent_A3.sqlite",
+      "tables": [
+        "Customers",
+        "Discount",
+        "Vehicles",
+        "Renting_history"
+      ],
+      "description": "Agent A3 holds a horizontal partition of vehicle_rent database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Customers": [
+            2
+          ],
+          "Discount": [],
+          "Vehicles": [],
+          "Renting_history": [
+            2,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/vehicle_rent/vehicle_rent_A4.sqlite",
+      "tables": [
+        "Customers",
+        "Discount",
+        "Vehicles",
+        "Renting_history"
+      ],
+      "description": "Agent A4 holds a horizontal partition of vehicle_rent database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Customers": [],
+          "Discount": [
+            3
+          ],
+          "Vehicles": [
+            6
+          ],
+          "Renting_history": [
+            1,
+            5
+          ]
+        }
+      }
+    }
+  ]
+}

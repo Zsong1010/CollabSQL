@@ -1,0 +1,159 @@
+{
+  "db_id": "cre_Doc_Template_Mgt",
+  "source_db": "data/spider_dk/databases/cre_Doc_Template_Mgt/cre_Doc_Template_Mgt.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_dk/fragments/horizontal_n4/cre_Doc_Template_Mgt/cre_Doc_Template_Mgt_A1.sqlite",
+      "tables": [
+        "Ref_Template_Types",
+        "Templates",
+        "Documents",
+        "Paragraphs"
+      ],
+      "description": "Agent A1 holds a horizontal partition of cre_Doc_Template_Mgt database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Ref_Template_Types": [
+            0,
+            1
+          ],
+          "Templates": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            9,
+            15
+          ],
+          "Documents": [
+            3,
+            4,
+            6,
+            10,
+            12,
+            14
+          ],
+          "Paragraphs": [
+            3,
+            4,
+            7,
+            9
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_dk/fragments/horizontal_n4/cre_Doc_Template_Mgt/cre_Doc_Template_Mgt_A2.sqlite",
+      "tables": [
+        "Ref_Template_Types",
+        "Templates",
+        "Documents",
+        "Paragraphs"
+      ],
+      "description": "Agent A2 holds a horizontal partition of cre_Doc_Template_Mgt database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Ref_Template_Types": [
+            3,
+            4
+          ],
+          "Templates": [
+            0,
+            7,
+            8,
+            10,
+            12,
+            16
+          ],
+          "Documents": [
+            0,
+            1
+          ],
+          "Paragraphs": [
+            2,
+            5,
+            8,
+            14
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_dk/fragments/horizontal_n4/cre_Doc_Template_Mgt/cre_Doc_Template_Mgt_A3.sqlite",
+      "tables": [
+        "Ref_Template_Types",
+        "Templates",
+        "Documents",
+        "Paragraphs"
+      ],
+      "description": "Agent A3 holds a horizontal partition of cre_Doc_Template_Mgt database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Ref_Template_Types": [
+            2
+          ],
+          "Templates": [
+            14,
+            18,
+            19
+          ],
+          "Documents": [
+            2,
+            7,
+            8,
+            9
+          ],
+          "Paragraphs": [
+            0,
+            1,
+            6,
+            11,
+            13
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_dk/fragments/horizontal_n4/cre_Doc_Template_Mgt/cre_Doc_Template_Mgt_A4.sqlite",
+      "tables": [
+        "Ref_Template_Types",
+        "Templates",
+        "Documents",
+        "Paragraphs"
+      ],
+      "description": "Agent A4 holds a horizontal partition of cre_Doc_Template_Mgt database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Ref_Template_Types": [],
+          "Templates": [
+            3,
+            11,
+            13,
+            17
+          ],
+          "Documents": [
+            5,
+            11,
+            13
+          ],
+          "Paragraphs": [
+            10,
+            12
+          ]
+        }
+      }
+    }
+  ]
+}

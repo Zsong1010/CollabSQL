@@ -1,0 +1,174 @@
+{
+  "db_id": "planet_1",
+  "source_db": "data/spider_test/databases/planet_1/planet_1.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/planet_1/planet_1_A1.sqlite",
+      "tables": [
+        "Employee",
+        "Planet",
+        "Shipment",
+        "Has_Clearance",
+        "Client",
+        "Package"
+      ],
+      "description": "Agent A1 holds a horizontal partition of planet_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Employee": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "Planet": [
+            1,
+            2,
+            3,
+            6
+          ],
+          "Shipment": [
+            3
+          ],
+          "Has_Clearance": [
+            6
+          ],
+          "Client": [
+            0,
+            2,
+            6,
+            8,
+            10
+          ],
+          "Package": [
+            3,
+            4,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/planet_1/planet_1_A2.sqlite",
+      "tables": [
+        "Employee",
+        "Planet",
+        "Shipment",
+        "Has_Clearance",
+        "Client",
+        "Package"
+      ],
+      "description": "Agent A2 holds a horizontal partition of planet_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Employee": [
+            3,
+            4,
+            5
+          ],
+          "Planet": [
+            4,
+            5,
+            7
+          ],
+          "Shipment": [
+            0,
+            4
+          ],
+          "Has_Clearance": [
+            3,
+            4
+          ],
+          "Client": [],
+          "Package": [
+            2,
+            5,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/planet_1/planet_1_A3.sqlite",
+      "tables": [
+        "Employee",
+        "Planet",
+        "Shipment",
+        "Has_Clearance",
+        "Client",
+        "Package"
+      ],
+      "description": "Agent A3 holds a horizontal partition of planet_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Employee": [
+            2
+          ],
+          "Planet": [],
+          "Shipment": [
+            2
+          ],
+          "Has_Clearance": [
+            1,
+            2,
+            5
+          ],
+          "Client": [
+            3,
+            4,
+            5
+          ],
+          "Package": [
+            0,
+            1,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/planet_1/planet_1_A4.sqlite",
+      "tables": [
+        "Employee",
+        "Planet",
+        "Shipment",
+        "Has_Clearance",
+        "Client",
+        "Package"
+      ],
+      "description": "Agent A4 holds a horizontal partition of planet_1 database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "Employee": [],
+          "Planet": [
+            0,
+            8
+          ],
+          "Shipment": [
+            1
+          ],
+          "Has_Clearance": [
+            0
+          ],
+          "Client": [
+            1,
+            7,
+            9
+          ],
+          "Package": []
+        }
+      }
+    }
+  ]
+}

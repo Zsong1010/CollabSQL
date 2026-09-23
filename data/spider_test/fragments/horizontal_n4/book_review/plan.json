@@ -1,0 +1,88 @@
+{
+  "db_id": "book_review",
+  "source_db": "data/spider_test/databases/book_review/book_review.sqlite",
+  "split_type": "horizontal",
+  "num_agents": 4,
+  "seed": 42,
+  "agents": [
+    {
+      "agent_id": "A1",
+      "db_path": "data/spider_test/fragments/horizontal_n4/book_review/book_review_A1.sqlite",
+      "tables": [
+        "book",
+        "review"
+      ],
+      "description": "Agent A1 holds a horizontal partition of book_review database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "book": [
+            0,
+            1
+          ],
+          "review": [
+            1,
+            2
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A2",
+      "db_path": "data/spider_test/fragments/horizontal_n4/book_review/book_review_A2.sqlite",
+      "tables": [
+        "book",
+        "review"
+      ],
+      "description": "Agent A2 holds a horizontal partition of book_review database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "book": [
+            3,
+            4
+          ],
+          "review": [
+            0
+          ]
+        }
+      }
+    },
+    {
+      "agent_id": "A3",
+      "db_path": "data/spider_test/fragments/horizontal_n4/book_review/book_review_A3.sqlite",
+      "tables": [
+        "book",
+        "review"
+      ],
+      "description": "Agent A3 holds a horizontal partition of book_review database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "book": [
+            2
+          ],
+          "review": []
+        }
+      }
+    },
+    {
+      "agent_id": "A4",
+      "db_path": "data/spider_test/fragments/horizontal_n4/book_review/book_review_A4.sqlite",
+      "tables": [
+        "book",
+        "review"
+      ],
+      "description": "Agent A4 holds a horizontal partition of book_review database rows.",
+      "split_type": "horizontal",
+      "metadata": {
+        "row_assignments": {
+          "book": [],
+          "review": [
+            3
+          ]
+        }
+      }
+    }
+  ]
+}
