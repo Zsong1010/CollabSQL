@@ -1,0 +1,3980 @@
+{
+  "name": "CollabSQL Distributed Benchmark Partitions",
+  "version": "1.0.0",
+  "license_note": "Partition scripts and agent mappings are released with CollabSQL (MIT). Spider / BIRD / Spider-DK retain their original dataset licenses.",
+  "config": {
+    "num_agents": 4,
+    "seed": 42,
+    "topology_name_pattern": "{split_type}_n{num_agents}",
+    "semantics": {
+      "horizontal": "Row-wise split; every agent keeps the full table schema.",
+      "vertical": "Column-wise split; PK/FK columns are replicated.",
+      "random": "Per-table random choice of horizontal or vertical.",
+      "table": "Each base table is assigned wholly to exactly one agent; no replication. If fewer tables than agents, some agents are omitted."
+    },
+    "implementation": {
+      "library": "collabsql.data.distributed_bird",
+      "cli": "collabsql/scripts/build_distributed_bird.py",
+      "standalone_table_script": "field partition_script_py in this file"
+    },
+    "eval": {
+      "execution_accuracy_db": "centralized source sqlite",
+      "default_seed": 42,
+      "default_agents": 4
+    }
+  },
+  "datasets": {
+    "bird_dev": {
+      "eval_parquet": "data/bird_dev/bird_dev.parquet",
+      "databases_dir": "data/bird_dev/databases",
+      "num_queries": 1534,
+      "topologies": {
+        "horizontal_n4": {
+          "split_type": "horizontal",
+          "num_agents": 4,
+          "seed": 42,
+          "num_databases": 11,
+          "agent_mapping": {
+            "california_schools": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "frpm",
+                  "satscores",
+                  "schools"
+                ],
+                "A2": [
+                  "frpm",
+                  "satscores",
+                  "schools"
+                ],
+                "A3": [
+                  "frpm",
+                  "satscores",
+                  "schools"
+                ],
+                "A4": [
+                  "frpm",
+                  "satscores",
+                  "schools"
+                ]
+              }
+            },
+            "card_games": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "cards",
+                  "foreign_data",
+                  "legalities",
+                  "sets",
+                  "set_translations",
+                  "rulings"
+                ],
+                "A2": [
+                  "cards",
+                  "foreign_data",
+                  "legalities",
+                  "sets",
+                  "set_translations",
+                  "rulings"
+                ],
+                "A3": [
+                  "cards",
+                  "foreign_data",
+                  "legalities",
+                  "sets",
+                  "set_translations",
+                  "rulings"
+                ],
+                "A4": [
+                  "cards",
+                  "foreign_data",
+                  "legalities",
+                  "sets",
+                  "set_translations",
+                  "rulings"
+                ]
+              }
+            },
+            "codebase_community": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "badges",
+                  "comments",
+                  "postHistory",
+                  "postLinks",
+                  "posts",
+                  "tags",
+                  "users",
+                  "votes"
+                ],
+                "A2": [
+                  "badges",
+                  "comments",
+                  "postHistory",
+                  "postLinks",
+                  "posts",
+                  "tags",
+                  "users",
+                  "votes"
+                ],
+                "A3": [
+                  "badges",
+                  "comments",
+                  "postHistory",
+                  "postLinks",
+                  "posts",
+                  "tags",
+                  "users",
+                  "votes"
+                ],
+                "A4": [
+                  "badges",
+                  "comments",
+                  "postHistory",
+                  "postLinks",
+                  "posts",
+                  "tags",
+                  "users",
+                  "votes"
+                ]
+              }
+            },
+            "debit_card_specializing": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "customers",
+                  "gasstations",
+                  "products",
+                  "transactions_1k",
+                  "yearmonth"
+                ],
+                "A2": [
+                  "customers",
+                  "gasstations",
+                  "products",
+                  "transactions_1k",
+                  "yearmonth"
+                ],
+                "A3": [
+                  "customers",
+                  "gasstations",
+                  "products",
+                  "transactions_1k",
+                  "yearmonth"
+                ],
+                "A4": [
+                  "customers",
+                  "gasstations",
+                  "products",
+                  "transactions_1k",
+                  "yearmonth"
+                ]
+              }
+            },
+            "european_football_2": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Player_Attributes",
+                  "Player",
+                  "League",
+                  "Country",
+                  "Team",
+                  "Team_Attributes",
+                  "Match"
+                ],
+                "A2": [
+                  "Player_Attributes",
+                  "Player",
+                  "League",
+                  "Country",
+                  "Team",
+                  "Team_Attributes",
+                  "Match"
+                ],
+                "A3": [
+                  "Player_Attributes",
+                  "Player",
+                  "League",
+                  "Country",
+                  "Team",
+                  "Team_Attributes",
+                  "Match"
+                ],
+                "A4": [
+                  "Player_Attributes",
+                  "Player",
+                  "League",
+                  "Country",
+                  "Team",
+                  "Team_Attributes",
+                  "Match"
+                ]
+              }
+            },
+            "financial": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "account",
+                  "card",
+                  "client",
+                  "disp",
+                  "district",
+                  "loan",
+                  "order",
+                  "trans"
+                ],
+                "A2": [
+                  "account",
+                  "card",
+                  "client",
+                  "disp",
+                  "district",
+                  "loan",
+                  "order",
+                  "trans"
+                ],
+                "A3": [
+                  "account",
+                  "card",
+                  "client",
+                  "disp",
+                  "district",
+                  "loan",
+                  "order",
+                  "trans"
+                ],
+                "A4": [
+                  "account",
+                  "card",
+                  "client",
+                  "disp",
+                  "district",
+                  "loan",
+                  "order",
+                  "trans"
+                ]
+              }
+            },
+            "formula_1": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "circuits",
+                  "constructors",
+                  "drivers",
+                  "seasons",
+                  "races",
+                  "constructorResults",
+                  "constructorStandings",
+                  "driverStandings",
+                  "lapTimes",
+                  "pitStops",
+                  "qualifying",
+                  "status",
+                  "results"
+                ],
+                "A2": [
+                  "circuits",
+                  "constructors",
+                  "drivers",
+                  "seasons",
+                  "races",
+                  "constructorResults",
+                  "constructorStandings",
+                  "driverStandings",
+                  "lapTimes",
+                  "pitStops",
+                  "qualifying",
+                  "status",
+                  "results"
+                ],
+                "A3": [
+                  "circuits",
+                  "constructors",
+                  "drivers",
+                  "seasons",
+                  "races",
+                  "constructorResults",
+                  "constructorStandings",
+                  "driverStandings",
+                  "lapTimes",
+                  "pitStops",
+                  "qualifying",
+                  "status",
+                  "results"
+                ],
+                "A4": [
+                  "circuits",
+                  "constructors",
+                  "drivers",
+                  "seasons",
+                  "races",
+                  "constructorResults",
+                  "constructorStandings",
+                  "driverStandings",
+                  "lapTimes",
+                  "pitStops",
+                  "qualifying",
+                  "status",
+                  "results"
+                ]
+              }
+            },
+            "student_club": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "event",
+                  "major",
+                  "zip_code",
+                  "attendance",
+                  "budget",
+                  "expense",
+                  "income",
+                  "member"
+                ],
+                "A2": [
+                  "event",
+                  "major",
+                  "zip_code",
+                  "attendance",
+                  "budget",
+                  "expense",
+                  "income",
+                  "member"
+                ],
+                "A3": [
+                  "event",
+                  "major",
+                  "zip_code",
+                  "attendance",
+                  "budget",
+                  "expense",
+                  "income",
+                  "member"
+                ],
+                "A4": [
+                  "event",
+                  "major",
+                  "zip_code",
+                  "attendance",
+                  "budget",
+                  "expense",
+                  "income",
+                  "member"
+                ]
+              }
+            },
+            "superhero": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "alignment",
+                  "attribute",
+                  "colour",
+                  "gender",
+                  "publisher",
+                  "race",
+                  "superhero",
+                  "hero_attribute",
+                  "superpower",
+                  "hero_power"
+                ],
+                "A2": [
+                  "alignment",
+                  "attribute",
+                  "colour",
+                  "gender",
+                  "publisher",
+                  "race",
+                  "superhero",
+                  "hero_attribute",
+                  "superpower",
+                  "hero_power"
+                ],
+                "A3": [
+                  "alignment",
+                  "attribute",
+                  "colour",
+                  "gender",
+                  "publisher",
+                  "race",
+                  "superhero",
+                  "hero_attribute",
+                  "superpower",
+                  "hero_power"
+                ],
+                "A4": [
+                  "alignment",
+                  "attribute",
+                  "colour",
+                  "gender",
+                  "publisher",
+                  "race",
+                  "superhero",
+                  "hero_attribute",
+                  "superpower",
+                  "hero_power"
+                ]
+              }
+            },
+            "thrombosis_prediction": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Examination",
+                  "Patient",
+                  "Laboratory"
+                ],
+                "A2": [
+                  "Examination",
+                  "Patient",
+                  "Laboratory"
+                ],
+                "A3": [
+                  "Examination",
+                  "Patient",
+                  "Laboratory"
+                ],
+                "A4": [
+                  "Examination",
+                  "Patient",
+                  "Laboratory"
+                ]
+              }
+            },
+            "toxicology": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "atom",
+                  "bond",
+                  "connected",
+                  "molecule"
+                ],
+                "A2": [
+                  "atom",
+                  "bond",
+                  "connected",
+                  "molecule"
+                ],
+                "A3": [
+                  "atom",
+                  "bond",
+                  "connected",
+                  "molecule"
+                ],
+                "A4": [
+                  "atom",
+                  "bond",
+                  "connected",
+                  "molecule"
+                ]
+              }
+            }
+          }
+        },
+        "table_n4": {
+          "split_type": "table",
+          "num_agents": 4,
+          "seed": 42,
+          "num_databases": 11,
+          "agent_mapping": {
+            "california_schools": {
+              "split_type": "table",
+              "num_agents": 3,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "satscores"
+                ],
+                "A2": [
+                  "frpm"
+                ],
+                "A3": [
+                  "schools"
+                ]
+              }
+            },
+            "card_games": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "rulings",
+                  "sets"
+                ],
+                "A2": [
+                  "foreign_data"
+                ],
+                "A3": [
+                  "legalities"
+                ],
+                "A4": [
+                  "cards",
+                  "set_translations"
+                ]
+              }
+            },
+            "codebase_community": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "postHistory",
+                  "postLinks"
+                ],
+                "A2": [
+                  "comments",
+                  "posts"
+                ],
+                "A3": [
+                  "badges",
+                  "users"
+                ],
+                "A4": [
+                  "tags",
+                  "votes"
+                ]
+              }
+            },
+            "debit_card_specializing": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "transactions_1k"
+                ],
+                "A2": [
+                  "gasstations"
+                ],
+                "A3": [
+                  "customers",
+                  "products"
+                ],
+                "A4": [
+                  "yearmonth"
+                ]
+              }
+            },
+            "european_football_2": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "League",
+                  "Team_Attributes"
+                ],
+                "A2": [
+                  "Country",
+                  "Player"
+                ],
+                "A3": [
+                  "Player_Attributes"
+                ],
+                "A4": [
+                  "Match",
+                  "Team"
+                ]
+              }
+            },
+            "financial": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "disp",
+                  "loan"
+                ],
+                "A2": [
+                  "client",
+                  "district"
+                ],
+                "A3": [
+                  "account",
+                  "order"
+                ],
+                "A4": [
+                  "card",
+                  "trans"
+                ]
+              }
+            },
+            "formula_1": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "driverStandings",
+                  "drivers",
+                  "pitStops"
+                ],
+                "A2": [
+                  "constructorResults",
+                  "lapTimes",
+                  "qualifying"
+                ],
+                "A3": [
+                  "circuits",
+                  "constructorStandings",
+                  "seasons"
+                ],
+                "A4": [
+                  "constructors",
+                  "races",
+                  "results",
+                  "status"
+                ]
+              }
+            },
+            "student_club": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "event",
+                  "expense"
+                ],
+                "A2": [
+                  "attendance",
+                  "income"
+                ],
+                "A3": [
+                  "major",
+                  "member"
+                ],
+                "A4": [
+                  "budget",
+                  "zip_code"
+                ]
+              }
+            },
+            "superhero": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "attribute",
+                  "race",
+                  "superpower"
+                ],
+                "A2": [
+                  "gender",
+                  "hero_power"
+                ],
+                "A3": [
+                  "alignment",
+                  "colour",
+                  "publisher"
+                ],
+                "A4": [
+                  "hero_attribute",
+                  "superhero"
+                ]
+              }
+            },
+            "thrombosis_prediction": {
+              "split_type": "table",
+              "num_agents": 3,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Laboratory"
+                ],
+                "A2": [
+                  "Examination"
+                ],
+                "A3": [
+                  "Patient"
+                ]
+              }
+            },
+            "toxicology": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "connected"
+                ],
+                "A2": [
+                  "bond"
+                ],
+                "A3": [
+                  "molecule"
+                ],
+                "A4": [
+                  "atom"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "spider_test": {
+      "eval_parquet": "data/spider_test/spider_test.parquet",
+      "databases_dir": "data/spider_test/databases",
+      "num_queries": 2147,
+      "topologies": {
+        "horizontal_n4": {
+          "split_type": "horizontal",
+          "num_agents": 4,
+          "seed": 42,
+          "num_databases": 40,
+          "agent_mapping": {
+            "aan_1": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Affiliation",
+                  "Author",
+                  "Author_list",
+                  "Citation",
+                  "Paper"
+                ],
+                "A2": [
+                  "Affiliation",
+                  "Author",
+                  "Author_list",
+                  "Citation",
+                  "Paper"
+                ],
+                "A3": [
+                  "Affiliation",
+                  "Author",
+                  "Author_list",
+                  "Citation",
+                  "Paper"
+                ],
+                "A4": [
+                  "Affiliation",
+                  "Author",
+                  "Author_list",
+                  "Citation",
+                  "Paper"
+                ]
+              }
+            },
+            "address_1": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Student",
+                  "Direct_distance",
+                  "City"
+                ],
+                "A2": [
+                  "Student",
+                  "Direct_distance",
+                  "City"
+                ],
+                "A3": [
+                  "Student",
+                  "Direct_distance",
+                  "City"
+                ],
+                "A4": [
+                  "Student",
+                  "Direct_distance",
+                  "City"
+                ]
+              }
+            },
+            "advertising_agencies": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Agencies",
+                  "Staff",
+                  "Clients",
+                  "Invoices",
+                  "Meetings",
+                  "Payments",
+                  "Staff_in_Meetings"
+                ],
+                "A2": [
+                  "Agencies",
+                  "Staff",
+                  "Clients",
+                  "Invoices",
+                  "Meetings",
+                  "Payments",
+                  "Staff_in_Meetings"
+                ],
+                "A3": [
+                  "Agencies",
+                  "Staff",
+                  "Clients",
+                  "Invoices",
+                  "Meetings",
+                  "Payments",
+                  "Staff_in_Meetings"
+                ],
+                "A4": [
+                  "Agencies",
+                  "Staff",
+                  "Clients",
+                  "Invoices",
+                  "Meetings",
+                  "Payments",
+                  "Staff_in_Meetings"
+                ]
+              }
+            },
+            "art_1": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Artists",
+                  "Paintings",
+                  "Sculptures"
+                ],
+                "A2": [
+                  "Artists",
+                  "Paintings",
+                  "Sculptures"
+                ],
+                "A3": [
+                  "Artists",
+                  "Paintings",
+                  "Sculptures"
+                ],
+                "A4": [
+                  "Artists",
+                  "Paintings",
+                  "Sculptures"
+                ]
+              }
+            },
+            "bakery_1": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "customers",
+                  "goods",
+                  "items",
+                  "receipts"
+                ],
+                "A2": [
+                  "customers",
+                  "goods",
+                  "items",
+                  "receipts"
+                ],
+                "A3": [
+                  "customers",
+                  "goods",
+                  "items",
+                  "receipts"
+                ],
+                "A4": [
+                  "customers",
+                  "goods",
+                  "items",
+                  "receipts"
+                ]
+              }
+            },
+            "bbc_channels": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "channel",
+                  "director",
+                  "program",
+                  "director_admin"
+                ],
+                "A2": [
+                  "channel",
+                  "director",
+                  "program",
+                  "director_admin"
+                ],
+                "A3": [
+                  "channel",
+                  "director",
+                  "program",
+                  "director_admin"
+                ],
+                "A4": [
+                  "channel",
+                  "director",
+                  "program",
+                  "director_admin"
+                ]
+              }
+            },
+            "bike_racing": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "bike",
+                  "cyclist",
+                  "cyclists_own_bikes"
+                ],
+                "A2": [
+                  "bike",
+                  "cyclist",
+                  "cyclists_own_bikes"
+                ],
+                "A3": [
+                  "bike",
+                  "cyclist",
+                  "cyclists_own_bikes"
+                ],
+                "A4": [
+                  "bike",
+                  "cyclist",
+                  "cyclists_own_bikes"
+                ]
+              }
+            },
+            "boat_1": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Sailors",
+                  "Boats",
+                  "Reserves"
+                ],
+                "A2": [
+                  "Sailors",
+                  "Boats",
+                  "Reserves"
+                ],
+                "A3": [
+                  "Sailors",
+                  "Boats",
+                  "Reserves"
+                ],
+                "A4": [
+                  "Sailors",
+                  "Boats",
+                  "Reserves"
+                ]
+              }
+            },
+            "book_1": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Client",
+                  "Orders",
+                  "Author",
+                  "Book",
+                  "Author_Book",
+                  "Books_Order"
+                ],
+                "A2": [
+                  "Client",
+                  "Orders",
+                  "Author",
+                  "Book",
+                  "Author_Book",
+                  "Books_Order"
+                ],
+                "A3": [
+                  "Client",
+                  "Orders",
+                  "Author",
+                  "Book",
+                  "Author_Book",
+                  "Books_Order"
+                ],
+                "A4": [
+                  "Client",
+                  "Orders",
+                  "Author",
+                  "Book",
+                  "Author_Book",
+                  "Books_Order"
+                ]
+              }
+            },
+            "book_press": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "author",
+                  "press",
+                  "book"
+                ],
+                "A2": [
+                  "author",
+                  "press",
+                  "book"
+                ],
+                "A3": [
+                  "author",
+                  "press",
+                  "book"
+                ],
+                "A4": [
+                  "author",
+                  "press",
+                  "book"
+                ]
+              }
+            },
+            "book_review": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "book",
+                  "review"
+                ],
+                "A2": [
+                  "book",
+                  "review"
+                ],
+                "A3": [
+                  "book",
+                  "review"
+                ],
+                "A4": [
+                  "book",
+                  "review"
+                ]
+              }
+            },
+            "car_racing": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "country",
+                  "team",
+                  "driver",
+                  "team_driver"
+                ],
+                "A2": [
+                  "country",
+                  "team",
+                  "driver",
+                  "team_driver"
+                ],
+                "A3": [
+                  "country",
+                  "team",
+                  "driver",
+                  "team_driver"
+                ],
+                "A4": [
+                  "country",
+                  "team",
+                  "driver",
+                  "team_driver"
+                ]
+              }
+            },
+            "car_road_race": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "driver",
+                  "race"
+                ],
+                "A2": [
+                  "driver",
+                  "race"
+                ],
+                "A3": [
+                  "driver",
+                  "race"
+                ],
+                "A4": [
+                  "driver",
+                  "race"
+                ]
+              }
+            },
+            "club_leader": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "member",
+                  "club",
+                  "club_leader"
+                ],
+                "A2": [
+                  "member",
+                  "club",
+                  "club_leader"
+                ],
+                "A3": [
+                  "member",
+                  "club",
+                  "club_leader"
+                ],
+                "A4": [
+                  "member",
+                  "club",
+                  "club_leader"
+                ]
+              }
+            },
+            "conference": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "conference",
+                  "institution",
+                  "staff",
+                  "conference_participation"
+                ],
+                "A2": [
+                  "conference",
+                  "institution",
+                  "staff",
+                  "conference_participation"
+                ],
+                "A3": [
+                  "conference",
+                  "institution",
+                  "staff",
+                  "conference_participation"
+                ],
+                "A4": [
+                  "conference",
+                  "institution",
+                  "staff",
+                  "conference_participation"
+                ]
+              }
+            },
+            "country_language": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "languages",
+                  "countries",
+                  "official_languages"
+                ],
+                "A2": [
+                  "languages",
+                  "countries",
+                  "official_languages"
+                ],
+                "A3": [
+                  "languages",
+                  "countries",
+                  "official_languages"
+                ],
+                "A4": [
+                  "languages",
+                  "countries",
+                  "official_languages"
+                ]
+              }
+            },
+            "cre_Doc_Workflow": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Staff",
+                  "Ref_Staff_Roles",
+                  "Process_Outcomes",
+                  "Process_Status",
+                  "Authors",
+                  "Documents",
+                  "Business_Processes",
+                  "Documents_Processes",
+                  "Staff_in_Processes"
+                ],
+                "A2": [
+                  "Staff",
+                  "Ref_Staff_Roles",
+                  "Process_Outcomes",
+                  "Process_Status",
+                  "Authors",
+                  "Documents",
+                  "Business_Processes",
+                  "Documents_Processes",
+                  "Staff_in_Processes"
+                ],
+                "A3": [
+                  "Staff",
+                  "Ref_Staff_Roles",
+                  "Process_Outcomes",
+                  "Process_Status",
+                  "Authors",
+                  "Documents",
+                  "Business_Processes",
+                  "Documents_Processes",
+                  "Staff_in_Processes"
+                ],
+                "A4": [
+                  "Staff",
+                  "Ref_Staff_Roles",
+                  "Process_Outcomes",
+                  "Process_Status",
+                  "Authors",
+                  "Documents",
+                  "Business_Processes",
+                  "Documents_Processes",
+                  "Staff_in_Processes"
+                ]
+              }
+            },
+            "cre_Doc_and_collections": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Document_Subsets",
+                  "Collection_Subsets",
+                  "Document_Objects",
+                  "Collections",
+                  "Documents_in_Collections",
+                  "Document_Subset_Members",
+                  "Collection_Subset_Members"
+                ],
+                "A2": [
+                  "Document_Subsets",
+                  "Collection_Subsets",
+                  "Document_Objects",
+                  "Collections",
+                  "Documents_in_Collections",
+                  "Document_Subset_Members",
+                  "Collection_Subset_Members"
+                ],
+                "A3": [
+                  "Document_Subsets",
+                  "Collection_Subsets",
+                  "Document_Objects",
+                  "Collections",
+                  "Documents_in_Collections",
+                  "Document_Subset_Members",
+                  "Collection_Subset_Members"
+                ],
+                "A4": [
+                  "Document_Subsets",
+                  "Collection_Subsets",
+                  "Document_Objects",
+                  "Collections",
+                  "Documents_in_Collections",
+                  "Document_Subset_Members",
+                  "Collection_Subset_Members"
+                ]
+              }
+            },
+            "cre_Students_Information_Systems": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Students",
+                  "Transcripts",
+                  "Behaviour_Monitoring",
+                  "Addresses",
+                  "Ref_Event_Types",
+                  "Ref_Achievement_Type",
+                  "Ref_Address_Types",
+                  "Ref_Detention_Type",
+                  "Student_Events",
+                  "Teachers",
+                  "Student_Loans",
+                  "Classes",
+                  "Students_Addresses",
+                  "Detention",
+                  "Achievements"
+                ],
+                "A2": [
+                  "Students",
+                  "Transcripts",
+                  "Behaviour_Monitoring",
+                  "Addresses",
+                  "Ref_Event_Types",
+                  "Ref_Achievement_Type",
+                  "Ref_Address_Types",
+                  "Ref_Detention_Type",
+                  "Student_Events",
+                  "Teachers",
+                  "Student_Loans",
+                  "Classes",
+                  "Students_Addresses",
+                  "Detention",
+                  "Achievements"
+                ],
+                "A3": [
+                  "Students",
+                  "Transcripts",
+                  "Behaviour_Monitoring",
+                  "Addresses",
+                  "Ref_Event_Types",
+                  "Ref_Achievement_Type",
+                  "Ref_Address_Types",
+                  "Ref_Detention_Type",
+                  "Student_Events",
+                  "Teachers",
+                  "Student_Loans",
+                  "Classes",
+                  "Students_Addresses",
+                  "Detention",
+                  "Achievements"
+                ],
+                "A4": [
+                  "Students",
+                  "Transcripts",
+                  "Behaviour_Monitoring",
+                  "Addresses",
+                  "Ref_Event_Types",
+                  "Ref_Achievement_Type",
+                  "Ref_Address_Types",
+                  "Ref_Detention_Type",
+                  "Student_Events",
+                  "Teachers",
+                  "Student_Loans",
+                  "Classes",
+                  "Students_Addresses",
+                  "Detention",
+                  "Achievements"
+                ]
+              }
+            },
+            "customers_and_orders": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Products",
+                  "Addresses",
+                  "Customers",
+                  "Customer_Orders",
+                  "Order_Items"
+                ],
+                "A2": [
+                  "Products",
+                  "Addresses",
+                  "Customers",
+                  "Customer_Orders",
+                  "Order_Items"
+                ],
+                "A3": [
+                  "Products",
+                  "Addresses",
+                  "Customers",
+                  "Customer_Orders",
+                  "Order_Items"
+                ],
+                "A4": [
+                  "Products",
+                  "Addresses",
+                  "Customers",
+                  "Customer_Orders",
+                  "Order_Items"
+                ]
+              }
+            },
+            "district_spokesman": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "district",
+                  "spokesman",
+                  "spokesman_district"
+                ],
+                "A2": [
+                  "district",
+                  "spokesman",
+                  "spokesman_district"
+                ],
+                "A3": [
+                  "district",
+                  "spokesman",
+                  "spokesman_district"
+                ],
+                "A4": [
+                  "district",
+                  "spokesman",
+                  "spokesman_district"
+                ]
+              }
+            },
+            "e_commerce": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Products",
+                  "Customers",
+                  "Customer_Payment_Methods",
+                  "Invoices",
+                  "Orders",
+                  "Order_Items",
+                  "Shipments",
+                  "Shipment_Items"
+                ],
+                "A2": [
+                  "Products",
+                  "Customers",
+                  "Customer_Payment_Methods",
+                  "Invoices",
+                  "Orders",
+                  "Order_Items",
+                  "Shipments",
+                  "Shipment_Items"
+                ],
+                "A3": [
+                  "Products",
+                  "Customers",
+                  "Customer_Payment_Methods",
+                  "Invoices",
+                  "Orders",
+                  "Order_Items",
+                  "Shipments",
+                  "Shipment_Items"
+                ],
+                "A4": [
+                  "Products",
+                  "Customers",
+                  "Customer_Payment_Methods",
+                  "Invoices",
+                  "Orders",
+                  "Order_Items",
+                  "Shipments",
+                  "Shipment_Items"
+                ]
+              }
+            },
+            "government_shift": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Services",
+                  "Customers",
+                  "Channels",
+                  "Customers_and_Services",
+                  "Customer_Interactions",
+                  "Integration_Platform",
+                  "Analytical_Layer"
+                ],
+                "A2": [
+                  "Services",
+                  "Customers",
+                  "Channels",
+                  "Customers_and_Services",
+                  "Customer_Interactions",
+                  "Integration_Platform",
+                  "Analytical_Layer"
+                ],
+                "A3": [
+                  "Services",
+                  "Customers",
+                  "Channels",
+                  "Customers_and_Services",
+                  "Customer_Interactions",
+                  "Integration_Platform",
+                  "Analytical_Layer"
+                ],
+                "A4": [
+                  "Services",
+                  "Customers",
+                  "Channels",
+                  "Customers_and_Services",
+                  "Customer_Interactions",
+                  "Integration_Platform",
+                  "Analytical_Layer"
+                ]
+              }
+            },
+            "headphone_store": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "headphone",
+                  "store",
+                  "stock"
+                ],
+                "A2": [
+                  "headphone",
+                  "store",
+                  "stock"
+                ],
+                "A3": [
+                  "headphone",
+                  "store",
+                  "stock"
+                ],
+                "A4": [
+                  "headphone",
+                  "store",
+                  "stock"
+                ]
+              }
+            },
+            "institution_sports": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "institution",
+                  "Championship"
+                ],
+                "A2": [
+                  "institution",
+                  "Championship"
+                ],
+                "A3": [
+                  "institution",
+                  "Championship"
+                ],
+                "A4": [
+                  "institution",
+                  "Championship"
+                ]
+              }
+            },
+            "movie_2": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Movies",
+                  "MovieTheaters"
+                ],
+                "A2": [
+                  "Movies",
+                  "MovieTheaters"
+                ],
+                "A3": [
+                  "Movies",
+                  "MovieTheaters"
+                ],
+                "A4": [
+                  "Movies",
+                  "MovieTheaters"
+                ]
+              }
+            },
+            "online_exams": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Students",
+                  "Questions",
+                  "Exams",
+                  "Questions_in_Exams",
+                  "Valid_Answers",
+                  "Student_Answers",
+                  "Student_Assessments"
+                ],
+                "A2": [
+                  "Students",
+                  "Questions",
+                  "Exams",
+                  "Questions_in_Exams",
+                  "Valid_Answers",
+                  "Student_Answers",
+                  "Student_Assessments"
+                ],
+                "A3": [
+                  "Students",
+                  "Questions",
+                  "Exams",
+                  "Questions_in_Exams",
+                  "Valid_Answers",
+                  "Student_Answers",
+                  "Student_Assessments"
+                ],
+                "A4": [
+                  "Students",
+                  "Questions",
+                  "Exams",
+                  "Questions_in_Exams",
+                  "Valid_Answers",
+                  "Student_Answers",
+                  "Student_Assessments"
+                ]
+              }
+            },
+            "pilot_1": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "PilotSkills",
+                  "Hangar"
+                ],
+                "A2": [
+                  "PilotSkills",
+                  "Hangar"
+                ],
+                "A3": [
+                  "PilotSkills",
+                  "Hangar"
+                ],
+                "A4": [
+                  "PilotSkills",
+                  "Hangar"
+                ]
+              }
+            },
+            "planet_1": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Employee",
+                  "Planet",
+                  "Shipment",
+                  "Has_Clearance",
+                  "Client",
+                  "Package"
+                ],
+                "A2": [
+                  "Employee",
+                  "Planet",
+                  "Shipment",
+                  "Has_Clearance",
+                  "Client",
+                  "Package"
+                ],
+                "A3": [
+                  "Employee",
+                  "Planet",
+                  "Shipment",
+                  "Has_Clearance",
+                  "Client",
+                  "Package"
+                ],
+                "A4": [
+                  "Employee",
+                  "Planet",
+                  "Shipment",
+                  "Has_Clearance",
+                  "Client",
+                  "Package"
+                ]
+              }
+            },
+            "real_estate_rentals": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Ref_Age_Categories",
+                  "Ref_Property_Types",
+                  "Ref_Room_Types",
+                  "Ref_User_Categories",
+                  "Addresses",
+                  "Features",
+                  "Users",
+                  "Properties",
+                  "Property_Features",
+                  "Property_Photos",
+                  "Rooms",
+                  "User_Property_History",
+                  "User_Searches"
+                ],
+                "A2": [
+                  "Ref_Age_Categories",
+                  "Ref_Property_Types",
+                  "Ref_Room_Types",
+                  "Ref_User_Categories",
+                  "Addresses",
+                  "Features",
+                  "Users",
+                  "Properties",
+                  "Property_Features",
+                  "Property_Photos",
+                  "Rooms",
+                  "User_Property_History",
+                  "User_Searches"
+                ],
+                "A3": [
+                  "Ref_Age_Categories",
+                  "Ref_Property_Types",
+                  "Ref_Room_Types",
+                  "Ref_User_Categories",
+                  "Addresses",
+                  "Features",
+                  "Users",
+                  "Properties",
+                  "Property_Features",
+                  "Property_Photos",
+                  "Rooms",
+                  "User_Property_History",
+                  "User_Searches"
+                ],
+                "A4": [
+                  "Ref_Age_Categories",
+                  "Ref_Property_Types",
+                  "Ref_Room_Types",
+                  "Ref_User_Categories",
+                  "Addresses",
+                  "Features",
+                  "Users",
+                  "Properties",
+                  "Property_Features",
+                  "Property_Photos",
+                  "Rooms",
+                  "User_Property_History",
+                  "User_Searches"
+                ]
+              }
+            },
+            "region_building": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "building",
+                  "region"
+                ],
+                "A2": [
+                  "building",
+                  "region"
+                ],
+                "A3": [
+                  "building",
+                  "region"
+                ],
+                "A4": [
+                  "building",
+                  "region"
+                ]
+              }
+            },
+            "restaurant_bills": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "customer",
+                  "branch",
+                  "customer_order"
+                ],
+                "A2": [
+                  "customer",
+                  "branch",
+                  "customer_order"
+                ],
+                "A3": [
+                  "customer",
+                  "branch",
+                  "customer_order"
+                ],
+                "A4": [
+                  "customer",
+                  "branch",
+                  "customer_order"
+                ]
+              }
+            },
+            "sing_contest": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "participants",
+                  "songs",
+                  "performance_score"
+                ],
+                "A2": [
+                  "participants",
+                  "songs",
+                  "performance_score"
+                ],
+                "A3": [
+                  "participants",
+                  "songs",
+                  "performance_score"
+                ],
+                "A4": [
+                  "participants",
+                  "songs",
+                  "performance_score"
+                ]
+              }
+            },
+            "soccer_3": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "club",
+                  "player"
+                ],
+                "A2": [
+                  "club",
+                  "player"
+                ],
+                "A3": [
+                  "club",
+                  "player"
+                ],
+                "A4": [
+                  "club",
+                  "player"
+                ]
+              }
+            },
+            "tv_shows": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "city_channel",
+                  "radio",
+                  "tv_show",
+                  "city_channel_radio",
+                  "city_channel_tv_show"
+                ],
+                "A2": [
+                  "city_channel",
+                  "radio",
+                  "tv_show",
+                  "city_channel_radio",
+                  "city_channel_tv_show"
+                ],
+                "A3": [
+                  "city_channel",
+                  "radio",
+                  "tv_show",
+                  "city_channel_radio",
+                  "city_channel_tv_show"
+                ],
+                "A4": [
+                  "city_channel",
+                  "radio",
+                  "tv_show",
+                  "city_channel_radio",
+                  "city_channel_tv_show"
+                ]
+              }
+            },
+            "university_rank": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "university",
+                  "overall_ranking",
+                  "major",
+                  "major_ranking"
+                ],
+                "A2": [
+                  "university",
+                  "overall_ranking",
+                  "major",
+                  "major_ranking"
+                ],
+                "A3": [
+                  "university",
+                  "overall_ranking",
+                  "major",
+                  "major_ranking"
+                ],
+                "A4": [
+                  "university",
+                  "overall_ranking",
+                  "major",
+                  "major_ranking"
+                ]
+              }
+            },
+            "vehicle_driver": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "vehicle",
+                  "driver",
+                  "vehicle_driver"
+                ],
+                "A2": [
+                  "vehicle",
+                  "driver",
+                  "vehicle_driver"
+                ],
+                "A3": [
+                  "vehicle",
+                  "driver",
+                  "vehicle_driver"
+                ],
+                "A4": [
+                  "vehicle",
+                  "driver",
+                  "vehicle_driver"
+                ]
+              }
+            },
+            "vehicle_rent": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Customers",
+                  "Discount",
+                  "Vehicles",
+                  "Renting_history"
+                ],
+                "A2": [
+                  "Customers",
+                  "Discount",
+                  "Vehicles",
+                  "Renting_history"
+                ],
+                "A3": [
+                  "Customers",
+                  "Discount",
+                  "Vehicles",
+                  "Renting_history"
+                ],
+                "A4": [
+                  "Customers",
+                  "Discount",
+                  "Vehicles",
+                  "Renting_history"
+                ]
+              }
+            },
+            "video_game": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "platform",
+                  "game",
+                  "player",
+                  "game_player"
+                ],
+                "A2": [
+                  "platform",
+                  "game",
+                  "player",
+                  "game_player"
+                ],
+                "A3": [
+                  "platform",
+                  "game",
+                  "player",
+                  "game_player"
+                ],
+                "A4": [
+                  "platform",
+                  "game",
+                  "player",
+                  "game_player"
+                ]
+              }
+            },
+            "warehouse_1": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Warehouses",
+                  "Boxes"
+                ],
+                "A2": [
+                  "Warehouses",
+                  "Boxes"
+                ],
+                "A3": [
+                  "Warehouses",
+                  "Boxes"
+                ],
+                "A4": [
+                  "Warehouses",
+                  "Boxes"
+                ]
+              }
+            }
+          }
+        },
+        "table_n4": {
+          "split_type": "table",
+          "num_agents": 4,
+          "seed": 42,
+          "num_databases": 40,
+          "agent_mapping": {
+            "aan_1": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Citation"
+                ],
+                "A2": [
+                  "Affiliation",
+                  "Author"
+                ],
+                "A3": [
+                  "Author_list"
+                ],
+                "A4": [
+                  "Paper"
+                ]
+              }
+            },
+            "address_1": {
+              "split_type": "table",
+              "num_agents": 3,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Direct_distance"
+                ],
+                "A2": [
+                  "City"
+                ],
+                "A3": [
+                  "Student"
+                ]
+              }
+            },
+            "advertising_agencies": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Clients",
+                  "Staff_in_Meetings"
+                ],
+                "A2": [
+                  "Agencies",
+                  "Meetings"
+                ],
+                "A3": [
+                  "Payments",
+                  "Staff"
+                ],
+                "A4": [
+                  "Invoices"
+                ]
+              }
+            },
+            "art_1": {
+              "split_type": "table",
+              "num_agents": 3,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Paintings"
+                ],
+                "A2": [
+                  "Artists"
+                ],
+                "A3": [
+                  "Sculptures"
+                ]
+              }
+            },
+            "bakery_1": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "items"
+                ],
+                "A2": [
+                  "goods"
+                ],
+                "A3": [
+                  "receipts"
+                ],
+                "A4": [
+                  "customers"
+                ]
+              }
+            },
+            "bbc_channels": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "director_admin"
+                ],
+                "A2": [
+                  "director"
+                ],
+                "A3": [
+                  "program"
+                ],
+                "A4": [
+                  "channel"
+                ]
+              }
+            },
+            "bike_racing": {
+              "split_type": "table",
+              "num_agents": 3,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "cyclist"
+                ],
+                "A2": [
+                  "bike"
+                ],
+                "A3": [
+                  "cyclists_own_bikes"
+                ]
+              }
+            },
+            "boat_1": {
+              "split_type": "table",
+              "num_agents": 3,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Reserves"
+                ],
+                "A2": [
+                  "Boats"
+                ],
+                "A3": [
+                  "Sailors"
+                ]
+              }
+            },
+            "book_1": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Books_Order"
+                ],
+                "A2": [
+                  "Author_Book",
+                  "Orders"
+                ],
+                "A3": [
+                  "Book"
+                ],
+                "A4": [
+                  "Author",
+                  "Client"
+                ]
+              }
+            },
+            "book_press": {
+              "split_type": "table",
+              "num_agents": 3,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "book"
+                ],
+                "A2": [
+                  "author"
+                ],
+                "A3": [
+                  "press"
+                ]
+              }
+            },
+            "book_review": {
+              "split_type": "table",
+              "num_agents": 2,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "review"
+                ],
+                "A2": [
+                  "book"
+                ]
+              }
+            },
+            "car_racing": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "team"
+                ],
+                "A2": [
+                  "driver"
+                ],
+                "A3": [
+                  "team_driver"
+                ],
+                "A4": [
+                  "country"
+                ]
+              }
+            },
+            "car_road_race": {
+              "split_type": "table",
+              "num_agents": 2,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "race"
+                ],
+                "A2": [
+                  "driver"
+                ]
+              }
+            },
+            "club_leader": {
+              "split_type": "table",
+              "num_agents": 3,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "club_leader"
+                ],
+                "A2": [
+                  "club"
+                ],
+                "A3": [
+                  "member"
+                ]
+              }
+            },
+            "conference": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "institution"
+                ],
+                "A2": [
+                  "conference_participation"
+                ],
+                "A3": [
+                  "staff"
+                ],
+                "A4": [
+                  "conference"
+                ]
+              }
+            },
+            "country_language": {
+              "split_type": "table",
+              "num_agents": 3,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "languages"
+                ],
+                "A2": [
+                  "countries"
+                ],
+                "A3": [
+                  "official_languages"
+                ]
+              }
+            },
+            "cre_Doc_Workflow": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Authors",
+                  "Documents_Processes"
+                ],
+                "A2": [
+                  "Documents",
+                  "Ref_Staff_Roles"
+                ],
+                "A3": [
+                  "Business_Processes",
+                  "Process_Status",
+                  "Staff"
+                ],
+                "A4": [
+                  "Process_Outcomes",
+                  "Staff_in_Processes"
+                ]
+              }
+            },
+            "cre_Doc_and_collections": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Collection_Subsets",
+                  "Document_Subsets"
+                ],
+                "A2": [
+                  "Collection_Subset_Members",
+                  "Document_Objects"
+                ],
+                "A3": [
+                  "Document_Subset_Members"
+                ],
+                "A4": [
+                  "Collections",
+                  "Documents_in_Collections"
+                ]
+              }
+            },
+            "cre_Students_Information_Systems": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Addresses",
+                  "Classes",
+                  "Ref_Event_Types",
+                  "Transcripts"
+                ],
+                "A2": [
+                  "Behaviour_Monitoring",
+                  "Students",
+                  "Teachers"
+                ],
+                "A3": [
+                  "Achievements",
+                  "Ref_Achievement_Type",
+                  "Ref_Detention_Type",
+                  "Student_Events"
+                ],
+                "A4": [
+                  "Detention",
+                  "Ref_Address_Types",
+                  "Student_Loans",
+                  "Students_Addresses"
+                ]
+              }
+            },
+            "customers_and_orders": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Addresses",
+                  "Order_Items"
+                ],
+                "A2": [
+                  "Customer_Orders"
+                ],
+                "A3": [
+                  "Customers"
+                ],
+                "A4": [
+                  "Products"
+                ]
+              }
+            },
+            "district_spokesman": {
+              "split_type": "table",
+              "num_agents": 3,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "spokesman"
+                ],
+                "A2": [
+                  "district"
+                ],
+                "A3": [
+                  "spokesman_district"
+                ]
+              }
+            },
+            "e_commerce": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Order_Items",
+                  "Products"
+                ],
+                "A2": [
+                  "Customers",
+                  "Orders"
+                ],
+                "A3": [
+                  "Invoices",
+                  "Shipment_Items"
+                ],
+                "A4": [
+                  "Customer_Payment_Methods",
+                  "Shipments"
+                ]
+              }
+            },
+            "government_shift": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Channels",
+                  "Services"
+                ],
+                "A2": [
+                  "Analytical_Layer",
+                  "Customers"
+                ],
+                "A3": [
+                  "Customers_and_Services"
+                ],
+                "A4": [
+                  "Customer_Interactions",
+                  "Integration_Platform"
+                ]
+              }
+            },
+            "headphone_store": {
+              "split_type": "table",
+              "num_agents": 3,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "stock"
+                ],
+                "A2": [
+                  "headphone"
+                ],
+                "A3": [
+                  "store"
+                ]
+              }
+            },
+            "institution_sports": {
+              "split_type": "table",
+              "num_agents": 2,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "institution"
+                ],
+                "A2": [
+                  "Championship"
+                ]
+              }
+            },
+            "movie_2": {
+              "split_type": "table",
+              "num_agents": 2,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Movies"
+                ],
+                "A2": [
+                  "MovieTheaters"
+                ]
+              }
+            },
+            "online_exams": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Exams",
+                  "Questions"
+                ],
+                "A2": [
+                  "Student_Answers",
+                  "Valid_Answers"
+                ],
+                "A3": [
+                  "Student_Assessments"
+                ],
+                "A4": [
+                  "Questions_in_Exams",
+                  "Students"
+                ]
+              }
+            },
+            "pilot_1": {
+              "split_type": "table",
+              "num_agents": 2,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "PilotSkills"
+                ],
+                "A2": [
+                  "Hangar"
+                ]
+              }
+            },
+            "planet_1": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Package"
+                ],
+                "A2": [
+                  "Employee",
+                  "Shipment"
+                ],
+                "A3": [
+                  "Client",
+                  "Has_Clearance"
+                ],
+                "A4": [
+                  "Planet"
+                ]
+              }
+            },
+            "real_estate_rentals": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Property_Features",
+                  "Ref_Age_Categories",
+                  "Ref_Room_Types",
+                  "User_Property_History"
+                ],
+                "A2": [
+                  "Property_Photos",
+                  "Ref_Property_Types",
+                  "Users"
+                ],
+                "A3": [
+                  "Features",
+                  "Properties",
+                  "User_Searches"
+                ],
+                "A4": [
+                  "Addresses",
+                  "Ref_User_Categories",
+                  "Rooms"
+                ]
+              }
+            },
+            "region_building": {
+              "split_type": "table",
+              "num_agents": 2,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "region"
+                ],
+                "A2": [
+                  "building"
+                ]
+              }
+            },
+            "restaurant_bills": {
+              "split_type": "table",
+              "num_agents": 3,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "customer"
+                ],
+                "A2": [
+                  "branch"
+                ],
+                "A3": [
+                  "customer_order"
+                ]
+              }
+            },
+            "sing_contest": {
+              "split_type": "table",
+              "num_agents": 3,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "performance_score"
+                ],
+                "A2": [
+                  "participants"
+                ],
+                "A3": [
+                  "songs"
+                ]
+              }
+            },
+            "soccer_3": {
+              "split_type": "table",
+              "num_agents": 2,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "player"
+                ],
+                "A2": [
+                  "club"
+                ]
+              }
+            },
+            "tv_shows": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "city_channel",
+                  "radio"
+                ],
+                "A2": [
+                  "city_channel_radio"
+                ],
+                "A3": [
+                  "city_channel_tv_show"
+                ],
+                "A4": [
+                  "tv_show"
+                ]
+              }
+            },
+            "university_rank": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "overall_ranking"
+                ],
+                "A2": [
+                  "major_ranking"
+                ],
+                "A3": [
+                  "university"
+                ],
+                "A4": [
+                  "major"
+                ]
+              }
+            },
+            "vehicle_driver": {
+              "split_type": "table",
+              "num_agents": 3,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "vehicle"
+                ],
+                "A2": [
+                  "driver"
+                ],
+                "A3": [
+                  "vehicle_driver"
+                ]
+              }
+            },
+            "vehicle_rent": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Renting_history"
+                ],
+                "A2": [
+                  "Discount"
+                ],
+                "A3": [
+                  "Vehicles"
+                ],
+                "A4": [
+                  "Customers"
+                ]
+              }
+            },
+            "video_game": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "platform"
+                ],
+                "A2": [
+                  "game_player"
+                ],
+                "A3": [
+                  "player"
+                ],
+                "A4": [
+                  "game"
+                ]
+              }
+            },
+            "warehouse_1": {
+              "split_type": "table",
+              "num_agents": 2,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Warehouses"
+                ],
+                "A2": [
+                  "Boxes"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "spider_dk": {
+      "eval_parquet": "data/spider_dk/spider_dk.parquet",
+      "databases_dir": "data/spider_dk/databases",
+      "num_queries": 532,
+      "topologies": {
+        "horizontal_n4": {
+          "split_type": "horizontal",
+          "num_agents": 4,
+          "seed": 42,
+          "num_databases": 10,
+          "agent_mapping": {
+            "car_1": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "continents",
+                  "countries",
+                  "car_makers",
+                  "model_list",
+                  "car_names",
+                  "cars_data"
+                ],
+                "A2": [
+                  "continents",
+                  "countries",
+                  "car_makers",
+                  "model_list",
+                  "car_names",
+                  "cars_data"
+                ],
+                "A3": [
+                  "continents",
+                  "countries",
+                  "car_makers",
+                  "model_list",
+                  "car_names",
+                  "cars_data"
+                ],
+                "A4": [
+                  "continents",
+                  "countries",
+                  "car_makers",
+                  "model_list",
+                  "car_names",
+                  "cars_data"
+                ]
+              }
+            },
+            "cre_Doc_Template_Mgt": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Ref_Template_Types",
+                  "Templates",
+                  "Documents",
+                  "Paragraphs"
+                ],
+                "A2": [
+                  "Ref_Template_Types",
+                  "Templates",
+                  "Documents",
+                  "Paragraphs"
+                ],
+                "A3": [
+                  "Ref_Template_Types",
+                  "Templates",
+                  "Documents",
+                  "Paragraphs"
+                ],
+                "A4": [
+                  "Ref_Template_Types",
+                  "Templates",
+                  "Documents",
+                  "Paragraphs"
+                ]
+              }
+            },
+            "dog_kennels": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Breeds",
+                  "Charges",
+                  "Sizes",
+                  "Treatment_Types",
+                  "Owners",
+                  "Dogs",
+                  "Professionals",
+                  "Treatments"
+                ],
+                "A2": [
+                  "Breeds",
+                  "Charges",
+                  "Sizes",
+                  "Treatment_Types",
+                  "Owners",
+                  "Dogs",
+                  "Professionals",
+                  "Treatments"
+                ],
+                "A3": [
+                  "Breeds",
+                  "Charges",
+                  "Sizes",
+                  "Treatment_Types",
+                  "Owners",
+                  "Dogs",
+                  "Professionals",
+                  "Treatments"
+                ],
+                "A4": [
+                  "Breeds",
+                  "Charges",
+                  "Sizes",
+                  "Treatment_Types",
+                  "Owners",
+                  "Dogs",
+                  "Professionals",
+                  "Treatments"
+                ]
+              }
+            },
+            "flight_2": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "airlines",
+                  "airports",
+                  "flights"
+                ],
+                "A2": [
+                  "airlines",
+                  "airports",
+                  "flights"
+                ],
+                "A3": [
+                  "airlines",
+                  "airports",
+                  "flights"
+                ],
+                "A4": [
+                  "airlines",
+                  "airports",
+                  "flights"
+                ]
+              }
+            },
+            "new_concert_singer": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "stadium",
+                  "singer",
+                  "concert",
+                  "singer_in_concert"
+                ],
+                "A2": [
+                  "stadium",
+                  "singer",
+                  "concert",
+                  "singer_in_concert"
+                ],
+                "A3": [
+                  "stadium",
+                  "singer",
+                  "concert",
+                  "singer_in_concert"
+                ],
+                "A4": [
+                  "stadium",
+                  "singer",
+                  "concert",
+                  "singer_in_concert"
+                ]
+              }
+            },
+            "new_orchestra": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "conductor",
+                  "orchestra",
+                  "performance",
+                  "show"
+                ],
+                "A2": [
+                  "conductor",
+                  "orchestra",
+                  "performance",
+                  "show"
+                ],
+                "A3": [
+                  "conductor",
+                  "orchestra",
+                  "performance",
+                  "show"
+                ],
+                "A4": [
+                  "conductor",
+                  "orchestra",
+                  "performance",
+                  "show"
+                ]
+              }
+            },
+            "new_pets_1": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Student",
+                  "Has_Pet",
+                  "Pets"
+                ],
+                "A2": [
+                  "Student",
+                  "Has_Pet",
+                  "Pets"
+                ],
+                "A3": [
+                  "Student",
+                  "Has_Pet",
+                  "Pets"
+                ],
+                "A4": [
+                  "Student",
+                  "Has_Pet",
+                  "Pets"
+                ]
+              }
+            },
+            "singer": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "singer",
+                  "song"
+                ],
+                "A2": [
+                  "singer",
+                  "song"
+                ],
+                "A3": [
+                  "singer",
+                  "song"
+                ],
+                "A4": [
+                  "singer",
+                  "song"
+                ]
+              }
+            },
+            "student_transcripts_tracking": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Addresses",
+                  "Courses",
+                  "Departments",
+                  "Degree_Programs",
+                  "Sections",
+                  "Semesters",
+                  "Students",
+                  "Student_Enrolment",
+                  "Student_Enrolment_Courses",
+                  "Transcripts",
+                  "Transcript_Contents"
+                ],
+                "A2": [
+                  "Addresses",
+                  "Courses",
+                  "Departments",
+                  "Degree_Programs",
+                  "Sections",
+                  "Semesters",
+                  "Students",
+                  "Student_Enrolment",
+                  "Student_Enrolment_Courses",
+                  "Transcripts",
+                  "Transcript_Contents"
+                ],
+                "A3": [
+                  "Addresses",
+                  "Courses",
+                  "Departments",
+                  "Degree_Programs",
+                  "Sections",
+                  "Semesters",
+                  "Students",
+                  "Student_Enrolment",
+                  "Student_Enrolment_Courses",
+                  "Transcripts",
+                  "Transcript_Contents"
+                ],
+                "A4": [
+                  "Addresses",
+                  "Courses",
+                  "Departments",
+                  "Degree_Programs",
+                  "Sections",
+                  "Semesters",
+                  "Students",
+                  "Student_Enrolment",
+                  "Student_Enrolment_Courses",
+                  "Transcripts",
+                  "Transcript_Contents"
+                ]
+              }
+            },
+            "wta_1": {
+              "split_type": "horizontal",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "players",
+                  "matches",
+                  "rankings"
+                ],
+                "A2": [
+                  "players",
+                  "matches",
+                  "rankings"
+                ],
+                "A3": [
+                  "players",
+                  "matches",
+                  "rankings"
+                ],
+                "A4": [
+                  "players",
+                  "matches",
+                  "rankings"
+                ]
+              }
+            }
+          }
+        },
+        "vertical_n4": {
+          "split_type": "vertical",
+          "num_agents": 4,
+          "seed": 42,
+          "num_databases": 10,
+          "agent_mapping": {
+            "car_1": {
+              "split_type": "vertical",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "continents",
+                  "countries",
+                  "car_makers",
+                  "model_list",
+                  "car_names",
+                  "cars_data"
+                ],
+                "A2": [
+                  "continents",
+                  "countries",
+                  "car_makers",
+                  "model_list",
+                  "car_names",
+                  "cars_data"
+                ],
+                "A3": [
+                  "continents",
+                  "countries",
+                  "car_makers",
+                  "model_list",
+                  "car_names",
+                  "cars_data"
+                ],
+                "A4": [
+                  "continents",
+                  "countries",
+                  "car_makers",
+                  "model_list",
+                  "car_names",
+                  "cars_data"
+                ]
+              }
+            },
+            "cre_Doc_Template_Mgt": {
+              "split_type": "vertical",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Ref_Template_Types",
+                  "Templates",
+                  "Documents",
+                  "Paragraphs"
+                ],
+                "A2": [
+                  "Ref_Template_Types",
+                  "Templates",
+                  "Documents",
+                  "Paragraphs"
+                ],
+                "A3": [
+                  "Ref_Template_Types",
+                  "Templates",
+                  "Documents",
+                  "Paragraphs"
+                ],
+                "A4": [
+                  "Ref_Template_Types",
+                  "Templates",
+                  "Documents",
+                  "Paragraphs"
+                ]
+              }
+            },
+            "dog_kennels": {
+              "split_type": "vertical",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Breeds",
+                  "Charges",
+                  "Sizes",
+                  "Treatment_Types",
+                  "Owners",
+                  "Dogs",
+                  "Professionals",
+                  "Treatments"
+                ],
+                "A2": [
+                  "Breeds",
+                  "Charges",
+                  "Sizes",
+                  "Treatment_Types",
+                  "Owners",
+                  "Dogs",
+                  "Professionals",
+                  "Treatments"
+                ],
+                "A3": [
+                  "Breeds",
+                  "Charges",
+                  "Sizes",
+                  "Treatment_Types",
+                  "Owners",
+                  "Dogs",
+                  "Professionals",
+                  "Treatments"
+                ],
+                "A4": [
+                  "Breeds",
+                  "Charges",
+                  "Sizes",
+                  "Treatment_Types",
+                  "Owners",
+                  "Dogs",
+                  "Professionals",
+                  "Treatments"
+                ]
+              }
+            },
+            "flight_2": {
+              "split_type": "vertical",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "airlines",
+                  "airports",
+                  "flights"
+                ],
+                "A2": [
+                  "airlines",
+                  "airports",
+                  "flights"
+                ],
+                "A3": [
+                  "airlines",
+                  "airports",
+                  "flights"
+                ],
+                "A4": [
+                  "airlines",
+                  "airports",
+                  "flights"
+                ]
+              }
+            },
+            "new_concert_singer": {
+              "split_type": "vertical",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "stadium",
+                  "singer",
+                  "concert",
+                  "singer_in_concert"
+                ],
+                "A2": [
+                  "stadium",
+                  "singer",
+                  "concert",
+                  "singer_in_concert"
+                ],
+                "A3": [
+                  "stadium",
+                  "singer",
+                  "concert",
+                  "singer_in_concert"
+                ],
+                "A4": [
+                  "stadium",
+                  "singer",
+                  "concert",
+                  "singer_in_concert"
+                ]
+              }
+            },
+            "new_orchestra": {
+              "split_type": "vertical",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "conductor",
+                  "orchestra",
+                  "performance",
+                  "show"
+                ],
+                "A2": [
+                  "conductor",
+                  "orchestra",
+                  "performance",
+                  "show"
+                ],
+                "A3": [
+                  "conductor",
+                  "orchestra",
+                  "performance",
+                  "show"
+                ],
+                "A4": [
+                  "conductor",
+                  "orchestra",
+                  "performance",
+                  "show"
+                ]
+              }
+            },
+            "new_pets_1": {
+              "split_type": "vertical",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Student",
+                  "Has_Pet",
+                  "Pets"
+                ],
+                "A2": [
+                  "Student",
+                  "Has_Pet",
+                  "Pets"
+                ],
+                "A3": [
+                  "Student",
+                  "Has_Pet",
+                  "Pets"
+                ],
+                "A4": [
+                  "Student",
+                  "Has_Pet",
+                  "Pets"
+                ]
+              }
+            },
+            "singer": {
+              "split_type": "vertical",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "singer",
+                  "song"
+                ],
+                "A2": [
+                  "singer",
+                  "song"
+                ],
+                "A3": [
+                  "singer",
+                  "song"
+                ],
+                "A4": [
+                  "singer",
+                  "song"
+                ]
+              }
+            },
+            "student_transcripts_tracking": {
+              "split_type": "vertical",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Addresses",
+                  "Courses",
+                  "Departments",
+                  "Degree_Programs",
+                  "Sections",
+                  "Semesters",
+                  "Students",
+                  "Student_Enrolment",
+                  "Student_Enrolment_Courses",
+                  "Transcripts",
+                  "Transcript_Contents"
+                ],
+                "A2": [
+                  "Addresses",
+                  "Courses",
+                  "Departments",
+                  "Degree_Programs",
+                  "Sections",
+                  "Semesters",
+                  "Students",
+                  "Student_Enrolment",
+                  "Student_Enrolment_Courses",
+                  "Transcripts",
+                  "Transcript_Contents"
+                ],
+                "A3": [
+                  "Addresses",
+                  "Courses",
+                  "Departments",
+                  "Degree_Programs",
+                  "Sections",
+                  "Semesters",
+                  "Students",
+                  "Student_Enrolment",
+                  "Student_Enrolment_Courses",
+                  "Transcripts",
+                  "Transcript_Contents"
+                ],
+                "A4": [
+                  "Addresses",
+                  "Courses",
+                  "Departments",
+                  "Degree_Programs",
+                  "Sections",
+                  "Semesters",
+                  "Students",
+                  "Student_Enrolment",
+                  "Student_Enrolment_Courses",
+                  "Transcripts",
+                  "Transcript_Contents"
+                ]
+              }
+            },
+            "wta_1": {
+              "split_type": "vertical",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "players",
+                  "matches",
+                  "rankings"
+                ],
+                "A2": [
+                  "players",
+                  "matches",
+                  "rankings"
+                ],
+                "A3": [
+                  "players",
+                  "matches",
+                  "rankings"
+                ],
+                "A4": [
+                  "players",
+                  "matches",
+                  "rankings"
+                ]
+              }
+            }
+          }
+        },
+        "random_n4": {
+          "split_type": "random",
+          "num_agents": 4,
+          "seed": 42,
+          "num_databases": 10,
+          "agent_mapping": {
+            "car_1": {
+              "split_type": "random",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "car_makers",
+                  "model_list"
+                ],
+                "A2": [
+                  "car_makers"
+                ],
+                "A3": [
+                  "continents",
+                  "countries",
+                  "car_names",
+                  "cars_data"
+                ],
+                "A4": [
+                  "countries",
+                  "car_names",
+                  "cars_data"
+                ]
+              }
+            },
+            "cre_Doc_Template_Mgt": {
+              "split_type": "random",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Documents",
+                  "Paragraphs"
+                ],
+                "A2": [
+                  "Documents",
+                  "Paragraphs"
+                ],
+                "A3": [
+                  "Documents"
+                ],
+                "A4": [
+                  "Templates"
+                ]
+              }
+            },
+            "dog_kennels": {
+              "split_type": "random",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Sizes"
+                ],
+                "A2": [
+                  "Breeds",
+                  "Charges",
+                  "Treatment_Types",
+                  "Owners",
+                  "Dogs",
+                  "Professionals",
+                  "Treatments"
+                ],
+                "A3": [
+                  "Breeds",
+                  "Owners",
+                  "Dogs",
+                  "Professionals",
+                  "Treatments"
+                ],
+                "A4": [
+                  "Owners",
+                  "Dogs",
+                  "Professionals",
+                  "Treatments"
+                ]
+              }
+            },
+            "flight_2": {
+              "split_type": "random",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "airlines",
+                  "airports",
+                  "flights"
+                ],
+                "A2": [
+                  "airlines",
+                  "airports",
+                  "flights"
+                ],
+                "A3": [
+                  "airlines",
+                  "airports",
+                  "flights"
+                ],
+                "A4": [
+                  "airlines",
+                  "airports",
+                  "flights"
+                ]
+              }
+            },
+            "new_concert_singer": {
+              "split_type": "random",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "stadium",
+                  "singer",
+                  "concert"
+                ],
+                "A2": [
+                  "stadium",
+                  "singer",
+                  "concert"
+                ],
+                "A3": [
+                  "stadium",
+                  "concert"
+                ],
+                "A4": [
+                  "stadium",
+                  "singer",
+                  "concert"
+                ]
+              }
+            },
+            "new_orchestra": {
+              "split_type": "random",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "show"
+                ],
+                "A2": [
+                  "show"
+                ],
+                "A3": [
+                  "show"
+                ],
+                "A4": [
+                  "show"
+                ]
+              }
+            },
+            "new_pets_1": {
+              "split_type": "random",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Student",
+                  "Has_Pet"
+                ],
+                "A2": [
+                  "Student",
+                  "Pets"
+                ],
+                "A3": [
+                  "Student",
+                  "Pets"
+                ],
+                "A4": [
+                  "Student",
+                  "Has_Pet"
+                ]
+              }
+            },
+            "singer": {
+              "split_type": "random",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "singer",
+                  "song"
+                ],
+                "A2": [
+                  "singer",
+                  "song"
+                ],
+                "A3": [
+                  "singer"
+                ],
+                "A4": [
+                  "singer",
+                  "song"
+                ]
+              }
+            },
+            "student_transcripts_tracking": {
+              "split_type": "random",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Courses",
+                  "Departments",
+                  "Degree_Programs",
+                  "Semesters",
+                  "Transcripts"
+                ],
+                "A2": [
+                  "Courses",
+                  "Departments",
+                  "Degree_Programs",
+                  "Semesters",
+                  "Transcripts"
+                ],
+                "A3": [
+                  "Courses",
+                  "Departments",
+                  "Degree_Programs",
+                  "Semesters"
+                ],
+                "A4": [
+                  "Addresses",
+                  "Sections",
+                  "Students",
+                  "Student_Enrolment",
+                  "Student_Enrolment_Courses",
+                  "Transcript_Contents"
+                ]
+              }
+            },
+            "wta_1": {
+              "split_type": "random",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "matches"
+                ],
+                "A2": [
+                  "matches"
+                ],
+                "A3": [
+                  "matches"
+                ],
+                "A4": [
+                  "matches"
+                ]
+              }
+            }
+          }
+        },
+        "table_n4": {
+          "split_type": "table",
+          "num_agents": 4,
+          "seed": 42,
+          "num_databases": 10,
+          "agent_mapping": {
+            "car_1": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "car_makers",
+                  "continents"
+                ],
+                "A2": [
+                  "car_names"
+                ],
+                "A3": [
+                  "cars_data"
+                ],
+                "A4": [
+                  "countries",
+                  "model_list"
+                ]
+              }
+            },
+            "cre_Doc_Template_Mgt": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Ref_Template_Types"
+                ],
+                "A2": [
+                  "Paragraphs"
+                ],
+                "A3": [
+                  "Templates"
+                ],
+                "A4": [
+                  "Documents"
+                ]
+              }
+            },
+            "dog_kennels": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Owners",
+                  "Sizes"
+                ],
+                "A2": [
+                  "Breeds",
+                  "Professionals"
+                ],
+                "A3": [
+                  "Dogs",
+                  "Treatment_Types"
+                ],
+                "A4": [
+                  "Charges",
+                  "Treatments"
+                ]
+              }
+            },
+            "flight_2": {
+              "split_type": "table",
+              "num_agents": 3,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "airports"
+                ],
+                "A2": [
+                  "airlines"
+                ],
+                "A3": [
+                  "flights"
+                ]
+              }
+            },
+            "new_concert_singer": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "singer_in_concert"
+                ],
+                "A2": [
+                  "singer"
+                ],
+                "A3": [
+                  "stadium"
+                ],
+                "A4": [
+                  "concert"
+                ]
+              }
+            },
+            "new_orchestra": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "performance"
+                ],
+                "A2": [
+                  "orchestra"
+                ],
+                "A3": [
+                  "show"
+                ],
+                "A4": [
+                  "conductor"
+                ]
+              }
+            },
+            "new_pets_1": {
+              "split_type": "table",
+              "num_agents": 3,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Pets"
+                ],
+                "A2": [
+                  "Has_Pet"
+                ],
+                "A3": [
+                  "Student"
+                ]
+              }
+            },
+            "singer": {
+              "split_type": "table",
+              "num_agents": 2,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "song"
+                ],
+                "A2": [
+                  "singer"
+                ]
+              }
+            },
+            "student_transcripts_tracking": {
+              "split_type": "table",
+              "num_agents": 4,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "Addresses",
+                  "Semesters",
+                  "Student_Enrolment_Courses"
+                ],
+                "A2": [
+                  "Courses",
+                  "Departments",
+                  "Student_Enrolment"
+                ],
+                "A3": [
+                  "Degree_Programs",
+                  "Transcript_Contents",
+                  "Transcripts"
+                ],
+                "A4": [
+                  "Sections",
+                  "Students"
+                ]
+              }
+            },
+            "wta_1": {
+              "split_type": "table",
+              "num_agents": 3,
+              "seed": 42,
+              "agent_to_tables": {
+                "A1": [
+                  "players"
+                ],
+                "A2": [
+                  "matches"
+                ],
+                "A3": [
+                  "rankings"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "partition_script_py": "#!/usr/bin/env python3\n\"\"\"\nCollabSQL public partition builder (benchmark topologies).\n\nTopologies\n----------\n- horizontal: row-wise split; each agent keeps the full schema\n- vertical:   column-wise split; PK/FK replicated\n- random:     per-table mix of horizontal / vertical\n- table:      whole-table assignment — each base table owned by exactly one agent\n              (no row/column split, no replication). If |tables| < num_agents,\n              idle agents are omitted.\n\nDefault benchmark config: num_agents=4, seed=42.\n\nUsage\n-----\n  python partition_benchmark.py \\\\\n      --db-root /path/to/databases \\\\\n      --output-root ./fragments \\\\\n      --topology table --num-agents 4 --seed 42\n\nDB layout: {db_root}/{db_id}/{db_id}.sqlite\n\"\"\"\nfrom __future__ import annotations\n\nimport argparse\nimport json\nimport random\nimport sqlite3\nfrom dataclasses import dataclass, field\nfrom pathlib import Path\nfrom typing import Literal\n\nSplitType = Literal[\"table\"]\n\n\n@dataclass\nclass AgentFragment:\n    agent_id: str\n    db_path: Path\n    tables: list[str]\n    description: str\n    split_type: SplitType\n    metadata: dict = field(default_factory=dict)\n\n\n@dataclass\nclass FragmentationPlan:\n    db_id: str\n    source_db: Path\n    split_type: SplitType\n    num_agents: int\n    agents: list[AgentFragment]\n    seed: int = 42\n\n\ndef _copy_schema_subset(\n    source: Path,\n    target: Path,\n    include_tables: list[str] | None = None,\n) -> None:\n    if target.exists():\n        target.unlink()\n    target.parent.mkdir(parents=True, exist_ok=True)\n    src = sqlite3.connect(str(source))\n    src.text_factory = lambda b: b.decode(\"utf-8\", errors=\"replace\")\n    dst = sqlite3.connect(str(target))\n    dst.text_factory = str\n    dst.execute(\"PRAGMA foreign_keys=OFF\")\n    tables = [\n        r[0]\n        for r in src.execute(\n            \"SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'\"\n        ).fetchall()\n    ]\n    if include_tables is not None:\n        allowed = set(include_tables)\n        tables = [t for t in tables if t in allowed]\n    for table in tables:\n        col_info = src.execute(f'PRAGMA table_info(\"{table}\")').fetchall()\n        cols = [c[1] for c in col_info]\n        pk_cols = [c[1] for c in col_info if c[5]]\n        pk_cols.sort(key=lambda name: next(c[5] for c in col_info if c[1] == name))\n        col_defs = []\n        for c in col_info:\n            if len(pk_cols) == 1 and c[1] == pk_cols[0]:\n                col_defs.append(f'\"{c[1]}\" {c[2] or \"TEXT\"} PRIMARY KEY')\n            else:\n                col_defs.append(f'\"{c[1]}\" {c[2] or \"TEXT\"}')\n        if len(pk_cols) > 1:\n            pk_list = \", \".join(f'\"{n}\"' for n in pk_cols)\n            col_defs.append(f\"PRIMARY KEY ({pk_list})\")\n        dst.execute(f'CREATE TABLE \"{table}\" ({\", \".join(col_defs)})')\n        col_list = \", \".join(f'\"{c}\"' for c in cols)\n        rows = src.execute(f'SELECT {col_list} FROM \"{table}\"').fetchall()\n        placeholders = \", \".join([\"?\"] * len(cols))\n        dst.executemany(\n            f'INSERT INTO \"{table}\" ({col_list}) VALUES ({placeholders})', rows\n        )\n    dst.commit()\n    src.close()\n    dst.close()\n\n\ndef table_split(\n    source_db: Path,\n    output_dir: Path,\n    db_id: str,\n    num_agents: int,\n    seed: int = 42,\n) -> FragmentationPlan:\n    rng = random.Random(seed)\n    output_dir.mkdir(parents=True, exist_ok=True)\n    conn = sqlite3.connect(str(source_db))\n    tables = [\n        r[0]\n        for r in conn.execute(\n            \"SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'\"\n        ).fetchall()\n    ]\n    table_sizes = {\n        t: int(conn.execute(f'SELECT COUNT(*) FROM \"{t}\"').fetchone()[0]) for t in tables\n    }\n    conn.close()\n    ordered = sorted(tables)\n    rng.shuffle(ordered)\n    n_active = min(num_agents, len(ordered)) if ordered else 0\n    agent_tables = {f\"A{i+1}\": [] for i in range(n_active)}\n    agent_load = {f\"A{i+1}\": 0 for i in range(n_active)}\n    for table in ordered:\n        best = min(\n            agent_tables.keys(),\n            key=lambda aid: (len(agent_tables[aid]), agent_load[aid], aid),\n        )\n        agent_tables[best].append(table)\n        agent_load[best] += table_sizes.get(table, 0)\n    agents: list[AgentFragment] = []\n    for i in range(n_active):\n        agent_id = f\"A{i+1}\"\n        held = sorted(agent_tables[agent_id])\n        if not held:\n            continue\n        agent_db = output_dir / f\"{db_id}_{agent_id}.sqlite\"\n        _copy_schema_subset(source_db, agent_db, include_tables=held)\n        agents.append(\n            AgentFragment(\n                agent_id=agent_id,\n                db_path=agent_db,\n                tables=held,\n                description=(\n                    f\"Agent {agent_id} exclusively manages tables \"\n                    f\"[{', '.join(held)}] of {db_id} (table-level partition).\"\n                ),\n                split_type=\"table\",\n                metadata={\"table_assignment\": held, \"row_load\": agent_load[agent_id]},\n            )\n        )\n    return FragmentationPlan(\n        db_id=db_id,\n        source_db=source_db,\n        split_type=\"table\",\n        num_agents=len(agents),\n        agents=agents,\n        seed=seed,\n    )\n\n\ndef save_plan(plan: FragmentationPlan, path: Path) -> None:\n    data = {\n        \"db_id\": plan.db_id,\n        \"source_db\": str(plan.source_db.resolve()),\n        \"split_type\": plan.split_type,\n        \"num_agents\": plan.num_agents,\n        \"seed\": plan.seed,\n        \"agents\": [\n            {\n                \"agent_id\": a.agent_id,\n                \"db_path\": str(a.db_path.name),\n                \"tables\": a.tables,\n                \"description\": a.description,\n                \"split_type\": a.split_type,\n                \"metadata\": a.metadata,\n            }\n            for a in plan.agents\n        ],\n    }\n    path.parent.mkdir(parents=True, exist_ok=True)\n    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + \"\\n\", encoding=\"utf-8\")\n\n\ndef list_databases(db_root: Path) -> list[str]:\n    return sorted(\n        p.name\n        for p in db_root.iterdir()\n        if p.is_dir() and (p / f\"{p.name}.sqlite\").exists()\n    )\n\n\ndef main() -> int:\n    p = argparse.ArgumentParser(description=\"CollabSQL public table-partition builder\")\n    p.add_argument(\"--db-root\", required=True, type=Path)\n    p.add_argument(\"--output-root\", required=True, type=Path)\n    p.add_argument(\"--num-agents\", type=int, default=4)\n    p.add_argument(\"--seed\", type=int, default=42)\n    p.add_argument(\"--db-id\", action=\"append\", dest=\"db_ids\")\n    args = p.parse_args()\n    topo_dir = args.output_root / f\"table_n{args.num_agents}\"\n    built = []\n    for db_id in args.db_ids or list_databases(args.db_root):\n        source = args.db_root / db_id / f\"{db_id}.sqlite\"\n        if not source.exists():\n            continue\n        out_dir = topo_dir / db_id\n        plan = table_split(source, out_dir, db_id, args.num_agents, args.seed)\n        save_plan(plan, out_dir / \"plan.json\")\n        built.append(db_id)\n    (topo_dir / \"manifest.json\").write_text(\n        json.dumps(\n            {\"topology\": \"table\", \"num_agents\": args.num_agents, \"seed\": args.seed, \"databases\": built},\n            indent=2,\n        ),\n        encoding=\"utf-8\",\n    )\n    print(f\"built {len(built)} databases -> {topo_dir}\")\n    return 0\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n"
+}
